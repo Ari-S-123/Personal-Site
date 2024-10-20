@@ -35,16 +35,14 @@
         lie at the intersection of Web/Mobile Development, Data Visualization, and A11y. However, I love learning new
         things, so I am open to any opportunity that increases the breadth and depth of my skillsets.</p>
     <div class="projects">
-        <div class="card shadow-lg hover:scale-105 transition-transform duration-300">
-            <a href="https://observablehq.com/d/ae6c08dbf1f6a458">
-                Dataviz Projects
-            </a>
-        </div>
-        <div class="card shadow-lg hover:scale-105 transition-transform duration-300">
-            <a href="https://github.com/Ari-S-123?tab=repositories&q=&type=public&language=&sort=stargazers">
-                Public GitHub Projects
-            </a>
-        </div>
+        <a href="https://observablehq.com/d/ae6c08dbf1f6a458"
+           class="card shadow-lg hover:scale-105 transition-transform duration-300">
+            Dataviz Projects
+        </a>
+        <a href="https://github.com/Ari-S-123?tab=repositories&q=&type=public&language=&sort=stargazers"
+           class="card shadow-lg hover:scale-105 transition-transform duration-300">
+            Public GitHub Projects
+        </a>
     </div>
 </main>
 
