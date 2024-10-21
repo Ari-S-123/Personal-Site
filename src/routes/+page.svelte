@@ -4,7 +4,7 @@
 <main class="home-page">
     <img src="Professional Profile Pic.jpg"
          alt="Picture of Ari"
-         class="w-64 h-64 rounded-full object-cover border-4 profile-border"
+         class="w-64 h-64 rounded-full object-cover border-accent border-4 profile-border"
     />
     <div class="profile-links">
         <a href="https://github.com/Ari-S-123">
@@ -31,9 +31,9 @@
 
     <h1 class="text-4xl font-bold m-2">Hi, I'm <span class="text-accent">Ari</span></h1>
     <p class="text-lg font-bold m-2">I'm a full-stack SWE and a student pursuing a Master's Degree in CS at Northeastern
-        University. My present interests
-        lie at the intersection of Web/Mobile Development, Data Visualization, and A11y. However, I love learning new
-        things, so I am open to any opportunity that increases the breadth and depth of my skillsets.</p>
+        University. My present interests lie at the intersection of Web/Mobile Development, Data Visualization, and
+        A11y. However, I love learning new things, so I am open to any opportunity that increases the breadth and depth
+        of my skillsets.</p>
     <div class="projects">
         <a href="https://observablehq.com/d/ae6c08dbf1f6a458"
            class="card shadow-lg hover:scale-105 transition-transform duration-300">
@@ -72,6 +72,7 @@
         gap: 1rem;
         margin: 1rem;
         padding: 1rem;
+        font-weight: bold;
     }
 
     .card {

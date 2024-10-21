@@ -36,6 +36,7 @@
         align-items: center;
         color: inherit;
         text-decoration: none;
+        font-family: Overpass, "Segoe UI", Roboto, sans-serif;
     }
 
     .built-using {
