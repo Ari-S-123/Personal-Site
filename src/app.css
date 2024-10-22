@@ -8,12 +8,16 @@
     }
 
     main {
-        @apply p-8;
+        @apply mx-8 my-4 flex flex-col items-center justify-center text-center;
     }
 }
 
 @layer components {
     .card {
-        @apply cursor-pointer border border-solid border-primary bg-secondary rounded-lg text-primary p-4 m-4 shadow-lg hover:scale-105 transition-transform duration-300;
+        @apply cursor-pointer border border-solid border-primary bg-secondary rounded-lg text-primary p-4 shadow-lg hover:scale-105 transition-transform duration-300;
+    }
+
+    .profile-links {
+        @apply w-12 h-12  shadow-lg hover:scale-105 transition-transform duration-300;
     }
 }

@@ -1,28 +1,28 @@
-<main class="flex flex-col items-center justify-center min-h-screen text-center">
+<main>
     <img src="Professional Profile Pic.jpg"
          alt="Picture of Ari"
          class="w-64 h-64 rounded-full object-cover border-accent border-4 profile-border"
     />
-    <div class="flex flex-row justify-center gap-4 m-4 p-4">
+    <div class="flex flex-row justify-center gap-8 my-6">
         <a href="https://github.com/Ari-S-123">
             <img src="GitHub-Logo.png"
                  alt="GitHub Logo"
-                 class="w-12 h-12  shadow-lg hover:scale-105 transition-transform duration-300"/>
+                 class="profile-links"/>
         </a>
         <a href="https://www.linkedin.com/in/aritra-saharay">
             <img src="LinkedIn-Logo.png"
                  alt="LinkedIn Logo"
-                 class="w-12 h-12  shadow-lg hover:scale-105 transition-transform duration-300"/>
+                 class="profile-links"/>
         </a>
         <a href="https://x.com/Ari_S_123">
             <img src="X-Logo.png"
                  alt="X Logo"
-                 class="w-12 h-12  shadow-lg hover:scale-105 transition-transform duration-300"/>
+                 class="profile-links"/>
         </a>
         <a href="https://www.youtube.com/@Ari_S_123">
             <img src="Youtube-Logo.png"
                  alt="Youtube Logo"
-                 class="w-12 h-12  shadow-lg hover:scale-105 transition-transform duration-300"/>
+                 class="profile-links"/>
         </a>
     </div>
 
@@ -31,7 +31,7 @@
         University. My present interests lie at the intersection of Web/Mobile Development, Data Visualization, and
         A11y. However, I love learning new things, so I am open to any opportunity that increases the breadth and depth
         of my skillsets.</p>
-    <div class="flex flex-row justify-center gap-4 m-4 p-4 font-bold">
+    <div class="flex flex-row justify-center gap-8 mx-4 my-2 font-bold">
         <a href="https://observablehq.com/d/ae6c08dbf1f6a458"
            class="card">
             Dataviz Projects
