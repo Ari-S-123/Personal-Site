@@ -1,5 +1,7 @@
 <script>
     import '../app.css';
+    /** @type {{children?: import('svelte').Snippet}} */
+    let { children } = $props();
 </script>
 
 <svelte:head>
@@ -22,7 +24,7 @@
 
 
 <main>
-    <slot/>
+    {@render children?.()}
 </main>
 
 <style>
