@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    margin: 0;
-    font-family: Geist, Inter, "Segoe UI", "Open Sans", Arial, sans-serif;
-    background-color: black;
-    color: white;
+@layer base {
+    body {
+        @apply m-0 bg-background text-text;
+    }
+
+    main {
+        @apply p-8;
+    }
 }
 
-main {
-    padding: 2em;
+@layer components {
+    .card {
+        @apply cursor-pointer border border-solid border-primary bg-secondary rounded-lg text-primary p-4 m-4 shadow-lg hover:scale-105 transition-transform duration-300;
+    }
 }

@@ -1,12 +1,9 @@
-<script>
-</script>
-
-<main class="home-page">
+<main class="flex flex-col items-center justify-center min-h-screen text-center">
     <img src="Professional Profile Pic.jpg"
          alt="Picture of Ari"
          class="w-64 h-64 rounded-full object-cover border-accent border-4 profile-border"
     />
-    <div class="profile-links">
+    <div class="flex flex-row justify-center gap-4 m-4 p-4">
         <a href="https://github.com/Ari-S-123">
             <img src="GitHub-Logo.png"
                  alt="GitHub Logo"
@@ -34,55 +31,14 @@
         University. My present interests lie at the intersection of Web/Mobile Development, Data Visualization, and
         A11y. However, I love learning new things, so I am open to any opportunity that increases the breadth and depth
         of my skillsets.</p>
-    <div class="projects">
+    <div class="flex flex-row justify-center gap-4 m-4 p-4 font-bold">
         <a href="https://observablehq.com/d/ae6c08dbf1f6a458"
-           class="card shadow-lg hover:scale-105 transition-transform duration-300">
+           class="card">
             Dataviz Projects
         </a>
         <a href="https://github.com/Ari-S-123?tab=repositories&q=&type=public&language=&sort=stargazers"
-           class="card shadow-lg hover:scale-105 transition-transform duration-300">
+           class="card">
             Public GitHub Projects
         </a>
     </div>
 </main>
-
-<style>
-    .home-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        min-height: 100vh;
-        text-align: center;
-    }
-
-    .profile-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .projects {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem;
-        padding: 1rem;
-        font-weight: bold;
-    }
-
-    .card {
-        cursor: pointer;
-        padding: 1rem;
-        margin: 1rem;
-        border: 1px solid black;
-        border-radius: 0.5rem;
-        background-color: white;
-        color: black;
-        text-decoration: none;
-    }
-</style>
