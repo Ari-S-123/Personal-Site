@@ -54,8 +54,8 @@ const config = {
 			fontFamily: {
 				svelte: ['Overpass', '"Segoe UI"', 'Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 				body: [
-					'Geist',
 					'Inter',
+					'Geist',
 					'"Segoe UI"',
 					'"Open Sans"',
 					'Arial',

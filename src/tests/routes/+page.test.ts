@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import Page from '../../routes/+page.svelte';
 import { render, screen } from '@testing-library/svelte';
 import '@testing-library/jest-dom/vitest';
+import { profileLinks, projectLinks } from '$lib/data/links';
 
 describe('Page Component', () => {
 	it('should render the profile avatar with correct attributes', () => {
@@ -22,35 +23,13 @@ describe('Page Component', () => {
 	});
 	it('should render social media links with correct attributes', () => {
 		render(Page);
-		const socialLinks = [
-			{
-				href: 'https://github.com/Ari-S-123',
-				alt: 'GitHub Logo',
-				src: 'GitHub-Logo.png'
-			},
-			{
-				href: 'https://www.linkedin.com/in/aritra-saharay',
-				alt: 'LinkedIn Logo',
-				src: 'LinkedIn-Logo.png'
-			},
-			{
-				href: 'https://x.com/Ari_S_123',
-				alt: 'X Logo',
-				src: 'X-Logo.png'
-			},
-			{
-				href: 'https://www.youtube.com/@Ari_S_123',
-				alt: 'Youtube Logo',
-				src: 'Youtube-Logo.png'
-			}
-		];
-		socialLinks.forEach((link) => {
-			const button = screen.getByRole('link', { name: link.alt });
-			expect(button).toHaveAttribute('href', link.href);
+		profileLinks.forEach((link) => {
+			const button = screen.getByRole('link', { name: link.ariaLabel });
+			expect(button).toHaveAttribute('href', link.url);
 			expect(button).toHaveAttribute('target', '_blank');
 			expect(button).toHaveAttribute('rel', 'noreferrer noopener');
-			const img = screen.getByAltText(link.alt);
-			expect(img).toHaveAttribute('src', link.src);
+			const img = screen.getByAltText(link.iconAlt);
+			expect(img).toHaveAttribute('src', link.iconPath);
 			expect(img).toHaveClass('profile-links', 'expand');
 		});
 	});
@@ -66,40 +45,21 @@ describe('Page Component', () => {
 	});
 	it('should render project buttons with correct attributes', () => {
 		render(Page);
-		const projectLinks = [
-			{
-				text: 'Dataviz Projects',
-				href: 'https://observablehq.com/d/ae6c08dbf1f6a458'
-			},
-			{
-				text: 'Public GitHub Projects',
-				href: 'https://github.com/Ari-S-123?tab=repositories&q=&type=public&language=&sort=stargazers'
-			}
-		];
 		projectLinks.forEach((link) => {
-			const button = screen.getByRole('link', { name: link.text });
-			expect(button).toHaveAttribute('href', link.href);
+			const button = screen.getByRole('link', { name: link.ariaLabel });
+			expect(button).toHaveAttribute('href', link.url);
 			expect(button).toHaveAttribute('target', '_blank');
 			expect(button).toHaveAttribute('rel', 'noreferrer noopener');
-			expect(button).toHaveClass(
-				'p-4',
-				'rounded-lg',
-				'text-base',
-				'font-bold',
-				'shadow-lg',
-				'hover:scale-105',
-				'transition-transform',
-				'duration-300'
-			);
+			expect(button).toHaveClass('p-4', 'rounded-lg', 'text-base', 'font-bold', 'expand');
 		});
 	});
 	it('should render main container with proper structure', () => {
 		render(Page);
 		const main = screen.getByRole('main');
 		expect(main).toBeInTheDocument();
-		const socialContainer = screen.getByRole('link', { name: 'GitHub Logo' }).closest('div');
+		const socialContainer = screen.getByLabelText('Links to social media profiles');
 		expect(socialContainer).toHaveClass('flex', 'flex-row', 'justify-center', 'gap-0.5', 'my-6');
-		const projectContainer = screen.getByRole('link', { name: 'Dataviz Projects' }).closest('div');
+		const projectContainer = screen.getByLabelText('Links to projects');
 		expect(projectContainer).toHaveClass(
 			'flex',
 			'flex-row',

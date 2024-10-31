@@ -14,11 +14,15 @@
 	/>
 </svelte:head>
 
-<header class="text-center my-4">
-	<h2 class="inline-flex items-center justify-center text-lg">
+<header aria-label="header" class="text-center my-4">
+	<h2
+		aria-label="Technology used to build this static site"
+		class="inline-flex items-center justify-center text-lg"
+	>
 		Built using SSG with
 		<HoverCard.Root>
 			<HoverCard.Trigger
+				aria-label="SvelteKit Docs Link"
 				href="https://svelte.dev/docs/kit/introduction"
 				target="_blank"
 				rel="noreferrer noopener"
@@ -26,15 +30,17 @@
 			>
 				@sveltejs/kit
 			</HoverCard.Trigger>
-			<HoverCard.Content class="rounded-lg w-80">
+			<HoverCard.Content aria-label="Hovercard" class="rounded-lg w-80">
 				<div class="flex space-x-4">
-					<Avatar.Root>
+					<Avatar.Root aria-label="Logo of web framework used">
 						<Avatar.Image src="Svelte-Logo.png" alt="Svelte Logo" />
 						<Avatar.Fallback>Svelte Logo</Avatar.Fallback>
 					</Avatar.Root>
 					<div class="space-y-1">
-						<h4 class="text-sm font-semibold">SvelteKit</h4>
-						<p class="text-sm">Web development, streamlined.</p>
+						<h4 aria-label="Name of web framework used" class="text-sm font-semibold">SvelteKit</h4>
+						<p aria-label="Motto of web framework used" class="text-sm">
+							Web development, streamlined.
+						</p>
 					</div>
 				</div>
 			</HoverCard.Content>

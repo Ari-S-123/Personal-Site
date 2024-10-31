@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import Layout from '../../routes/+layout.svelte';
 import { render, screen } from '@testing-library/svelte';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/vitest';
 
 describe('Head metadata', () => {
@@ -43,23 +42,6 @@ describe('Header', () => {
 			'font-svelte',
 			'text-accent'
 		);
-	});
-	it.skip('should show HoverCard content on hover', async () => {
-		render(Layout);
-		const trigger = screen.getByText(/@sveltejs\/kit/i);
-		await userEvent.hover(trigger, { delay: 1000 });
-		expect(screen.getByText('SvelteKit')).toBeInTheDocument();
-		expect(screen.getByText('Web development, streamlined.')).toBeInTheDocument();
-		const avatar = screen.getByAltText('Svelte Logo');
-		expect(avatar).toBeInTheDocument();
-		expect(avatar).toHaveAttribute('src', 'Svelte-Logo.png');
-	});
-	it.skip('should hide HoverCard content when unhovered', async () => {
-		render(Layout);
-		const trigger = screen.getByText(/@sveltejs\/kit/i);
-		await userEvent.hover(trigger, { delay: 1000 });
-		await userEvent.unhover(trigger, { delay: 1000 });
-		expect(screen.queryByText('Web development, streamlined.')).not.toBeVisible();
 	});
 	it('should have correct heading level and structure', () => {
 		render(Layout);

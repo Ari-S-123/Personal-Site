@@ -57,6 +57,24 @@
 	}
 
 	.expand {
+		@apply shadow-lg hover:scale-105;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	.expand {
 		@apply shadow-lg hover:scale-105 transition-transform duration-300;
+	}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
 	}
 }
