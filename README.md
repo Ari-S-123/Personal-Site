@@ -3,5 +3,5 @@
 ### To replicate:
 
 1. Clone Repo
-2. `npm install`
-3. `npm run dev -- --open`
+2. `pnpm install`
+3. `pnpm run dev -- --open`
