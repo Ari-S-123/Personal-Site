@@ -17,7 +17,7 @@
 			<Card.Header>
 				<Avatar.Root
 					aria-label="Picture of Website Author"
-					class="h-96 w-96 rounded-full object-cover border-accent border-4 profile-border self-center"
+					class="h-72 w-72 rounded-full object-cover border-accent border-4 profile-border self-center"
 				>
 					<Avatar.Image src="Professional Profile Pic.jpg" alt="Picture of Ari" />
 					<Avatar.Fallback>Picture of Ari</Avatar.Fallback>
@@ -50,7 +50,7 @@
 			</Card.Footer>
 		</Card.Root>
 		<div class="flex flex-col items-center justify-evenly gap-2">
-			<ScrollArea data-testid="Scroll Area" class="h-52 max-w-3xl rounded-md border">
+			<ScrollArea data-testid="Scroll Area" class="h-44 max-w-2xl rounded-md border">
 				<div class="p-4">
 					<h4 class="mb-4 text-xl font-bold leading-none">Experiences</h4>
 					{#each experiences as experience}
@@ -59,7 +59,7 @@
 					{/each}
 				</div>
 			</ScrollArea>
-			<ScrollArea data-testid="Scroll Area" class="h-52 max-w-3xl rounded-md border">
+			<ScrollArea data-testid="Scroll Area" class="h-44 max-w-2xl rounded-md border">
 				<div class="p-4">
 					<h4 class="mb-4 text-xl font-bold leading-none">Web Dev Projects</h4>
 					{#each webDevProjects as webDevProject}
@@ -68,7 +68,7 @@
 					{/each}
 				</div>
 			</ScrollArea>
-			<ScrollArea data-testid="Scroll Area" class="h-52 max-w-3xl rounded-md border">
+			<ScrollArea data-testid="Scroll Area" class="h-44 max-w-2xl rounded-md border">
 				<div class="p-4">
 					<h4 class="mb-4 text-xl font-bold leading-none">DataViz Projects</h4>
 					{#each dataVizProjects as dataVizProject}
