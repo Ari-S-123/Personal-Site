@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as Avatar from '$lib/components/ui/avatar/index';
 	import * as HoverCard from '$lib/components/ui/hover-card';
 
 	let { children } = $props();
@@ -17,9 +17,9 @@
 <header aria-label="header" class="text-center my-4">
 	<h2
 		aria-label="Technology used to build this static site"
-		class="inline-flex items-center justify-center text-lg"
+		class="inline-flex items-center justify-center"
 	>
-		Built using SSG with
+		Powered by
 		<HoverCard.Root>
 			<HoverCard.Trigger
 				aria-label="SvelteKit Docs Link"

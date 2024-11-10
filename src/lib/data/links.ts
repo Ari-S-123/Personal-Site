@@ -24,17 +24,5 @@ const youtubeLink: Link = {
 	iconPath: 'Youtube-Logo.png',
 	iconAlt: 'Youtube Logo'
 };
-const githubProjectsLink: Link = {
-	ariaLabel: 'Link to GitHub projects',
-	url: 'https://github.com/Ari-S-123?tab=repositories&q=&type=public&language=&sort=stargazers',
-	iconPath: '',
-	iconAlt: 'GitHub Projects'
-};
-const datavizProjectsLink: Link = {
-	ariaLabel: 'Link to Data Visualization projects',
-	url: 'https://observablehq.com/d/ae6c08dbf1f6a458',
-	iconPath: '',
-	iconAlt: 'Dataviz Projects'
-};
+
 export const profileLinks: Link[] = [githubLink, linkedinLink, xLink, youtubeLink];
-export const projectLinks: Link[] = [githubProjectsLink, datavizProjectsLink];
