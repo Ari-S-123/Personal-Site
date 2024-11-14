@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
-import '@testing-library/jest-dom/vitest';
 import Experience from '../../../lib/components/Experience.svelte';
 import type { Experience as ExperienceType } from '../../../lib/types/Experience';
 
@@ -25,7 +24,7 @@ describe('Experience Component', () => {
 	it('should render basic experience information', () => {
 		render(Experience, { props: mockExperience });
 
-		const container = screen.getByLabelText('Experience Details');
+		const container = screen.getByLabelText('Experience Details for Software Engineer');
 		expect(container).toBeInTheDocument();
 		expect(container).toHaveClass('flex', 'flex-col');
 
@@ -39,7 +38,15 @@ describe('Experience Component', () => {
 
 		const descriptionList = screen.getByLabelText('Experience Description');
 		expect(descriptionList).toBeInTheDocument();
-		expect(descriptionList).toHaveClass('list-disc', 'list-inside', 'flex', 'flex-col');
+		expect(descriptionList).toHaveClass(
+			'list-disc',
+			'list-outside',
+			'flex',
+			'flex-col',
+			'items-start',
+			'justify-start',
+			'pl-5'
+		);
 
 		mockExperience.description.forEach((desc) => {
 			const listItem = screen.getByText(desc);
@@ -56,7 +63,7 @@ describe('Experience Component', () => {
 			'Tech stack for Software Engineer at Tech Corp'
 		);
 		expect(techStackContainer).toBeInTheDocument();
-		expect(techStackContainer).toHaveClass('flex', 'flex-row', 'flex-wrap', 'gap-2', 'my-2');
+		expect(techStackContainer).toHaveClass('flex', 'flex-row', 'flex-wrap', 'gap-2', 'm-2');
 
 		mockExperience.techStack.forEach((tech) => {
 			const badge = screen.getByText(tech.name);

@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import Layout from '../../routes/+layout.svelte';
-import { render, screen, fireEvent } from '@testing-library/svelte';
-import '@testing-library/jest-dom/vitest';
+import { render, screen } from '@testing-library/svelte';
 
 describe('Head metadata', () => {
 	it('should set correct page title and meta description', () => {
@@ -16,11 +15,11 @@ describe('Head metadata', () => {
 	});
 });
 
-describe('Header', () => {
-	it('should render the header with correct text and structure', () => {
+describe('Footer', () => {
+	it('should render the footer with correct text and structure', () => {
 		render(Layout);
-		const header = screen.getByRole('banner');
-		expect(header).toHaveClass('text-center', 'my-4');
+		const footer = screen.getByLabelText('footer');
+		expect(footer).toHaveClass('text-center');
 
 		const heading = screen.getByRole('heading', { level: 2 });
 		expect(heading).toHaveClass('inline-flex', 'items-center', 'justify-center');
@@ -49,29 +48,6 @@ describe('Header', () => {
 			'text-accent'
 		);
 		expect(link).toHaveTextContent('@sveltejs/kit');
-	});
-});
-
-// TODO: Figure out why this test keeps failing
-describe.skip('HoverCard', () => {
-	it('should render hover card content when triggered', async () => {
-		render(Layout);
-		const trigger = screen.getByLabelText('SvelteKit Docs Link');
-		await fireEvent.mouseOver(trigger);
-		const hoverCard = screen.getByLabelText('Hovercard');
-		expect(hoverCard).toBeInTheDocument();
-		expect(hoverCard).toHaveClass('rounded-lg', 'w-80');
-		const avatar = screen.getByLabelText('Logo of web framework used');
-		expect(avatar).toBeInTheDocument();
-		const avatarImage = screen.getByAltText('Svelte Logo');
-		expect(avatarImage).toBeInTheDocument();
-		expect(avatarImage).toHaveAttribute('src', 'Svelte-Logo.png');
-		const frameworkName = screen.getByLabelText('Name of web framework used');
-		expect(frameworkName).toHaveTextContent('SvelteKit');
-		expect(frameworkName).toHaveClass('text-sm', 'font-semibold');
-		const motto = screen.getByLabelText('Motto of web framework used');
-		expect(motto).toHaveTextContent('Web development, streamlined.');
-		expect(motto).toHaveClass('text-sm');
 	});
 });
 

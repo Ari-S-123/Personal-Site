@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
-import '@testing-library/jest-dom/vitest';
 import Project from '../../../lib/components/Project.svelte';
 import type { Project as ProjectType } from '../../../lib/types/Project';
 

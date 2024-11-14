@@ -10,7 +10,7 @@
 <div aria-label={name}>
 	<b>{name}</b>
 	<div aria-label="Project Details" class="flex flex-row items-center justify-between">
-		<p class="m-2">{description}</p>
+		<p class="m-2 text-left">{description}</p>
 		<div aria-label="External Links" class="flex flex-row items-center justify-between gap-2">
 			{#if repoUrl !== ''}
 				<Button
