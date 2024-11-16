@@ -84,11 +84,21 @@ const f1DriverTitleContributionsDataviz: Project = {
 	techStack: [d3, html, css, javaScript]
 };
 
+const f1MeanFinishingPositionByCountryDataviz: Project = {
+	name: 'Mean Finishing Position of F1 Drivers by Country',
+	description:
+		'Poland has the best mean driver finishing position in F1 at 10.65 thanks to Robert Kubica.',
+	hostedUrl: 'https://observablehq.com/d/675f5d1449cebd1c',
+	repoUrl: '',
+	techStack: [vegaLiteAPI, html, css, javaScript]
+};
+
 export const webDevProjects: Project[] = [poemPortal];
 export const dataVizProjects: Project[] = [
-	videoGameSalesDataviz,
-	tEdAndLifeExpDataviz,
-	mathEStudentPerformanceDataviz,
+	f1MeanFinishingPositionByCountryDataviz,
+	f1DriverTitleContributionsDataviz,
 	intFootballMeanGoalsDataviz,
-	f1DriverTitleContributionsDataviz
+	mathEStudentPerformanceDataviz,
+	tEdAndLifeExpDataviz,
+	videoGameSalesDataviz
 ];

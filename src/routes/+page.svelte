@@ -13,7 +13,7 @@
 	import CollapsibleContentTransition from '$lib/components/CollapsibleContentTransition.svelte';
 </script>
 
-<main class="max-w-3xl flex flex-col m-0 items-center justify-center gap-4">
+<main class="max-w-3xl min-w-[320px] w-full flex flex-col m-0 items-center justify-center gap-4">
 	<Card.Root>
 		<Card.Header>
 			<Avatar.Root
@@ -52,10 +52,10 @@
 	</Card.Root>
 	<Card.Root aria-label="Card containing list of experiences">
 		<Collapsible.Root
-			class="min-w-[48rem] space-y-2 m-4"
+			class="space-y-2 m-4 min-w-[320px] max-w-3xl"
 			aria-label="Collapsible component containing list of experiences"
 		>
-			<div class="flex items-center justify-between space-x-4 px-4">
+			<div class="flex items-center justify-between space-x-4">
 				<h3 class="text-2xl font-bold">Experience</h3>
 				<Collapsible.Trigger
 					class={buttonVariants({ variant: 'ghost', size: 'icon', class: 'w-9 p-0' })}
@@ -67,20 +67,20 @@
 			</div>
 			<CollapsibleContentTransition class="space-y-2" aria-label="List of experiences">
 				{#each experiences as experience}
-					<div class="max-w-3xl">
-						<Experience {...experience} />
+					<Experience {...experience} />
+					{#if experiences[experiences.length - 1] !== experience}
 						<Separator data-testid="experience-separator" class="my-4" />
-					</div>
+					{/if}
 				{/each}
 			</CollapsibleContentTransition>
 		</Collapsible.Root>
 	</Card.Root>
 	<Card.Root aria-label="Card containing list of web dev projects">
 		<Collapsible.Root
-			class="min-w-[48rem] space-y-2 m-4"
+			class="space-y-2 m-4 min-w-[320px] max-w-3xl"
 			aria-label="Collapsible component containing list of web dev projects"
 		>
-			<div class="flex items-center justify-between space-x-4 px-4">
+			<div class="flex items-center justify-between space-x-4">
 				<h3 class="text-2xl font-bold">Web Dev Projects</h3>
 				<Collapsible.Trigger
 					class={buttonVariants({ variant: 'ghost', size: 'icon', class: 'w-9 p-0' })}
@@ -93,17 +93,19 @@
 			<CollapsibleContentTransition class="space-y-2" aria-label="List of web dev projects">
 				{#each webDevProjects as webDevProject}
 					<Project {...webDevProject} />
-					<Separator data-testid="web-dev-separator" class="my-4" />
+					{#if webDevProjects[webDevProjects.length - 1] !== webDevProject}
+						<Separator data-testid="web-dev-separator" class="my-4" />
+					{/if}
 				{/each}
 			</CollapsibleContentTransition>
 		</Collapsible.Root>
 	</Card.Root>
 	<Card.Root aria-label="Card containing list of dataviz projects">
 		<Collapsible.Root
-			class="min-w-[48rem] space-y-2 m-4"
+			class="space-y-2 m-4 min-w-[320px] max-w-3xl"
 			aria-label="Collapsible component containing list of dataviz projects"
 		>
-			<div class="flex items-center justify-between space-x-4 px-4">
+			<div class="flex items-center justify-between space-x-4">
 				<h3 class="text-2xl font-bold">DataViz Projects</h3>
 				<Collapsible.Trigger
 					class={buttonVariants({ variant: 'ghost', size: 'icon', class: 'w-9 p-0' })}
@@ -116,7 +118,9 @@
 			<CollapsibleContentTransition class="space-y-2" aria-label="List of dataviz projects">
 				{#each dataVizProjects as dataVizProject}
 					<Project {...dataVizProject} />
-					<Separator data-testid="dataviz-separator" class="my-4" />
+					{#if dataVizProjects[dataVizProjects.length - 1] !== dataVizProject}
+						<Separator data-testid="dataviz-separator" class="my-4" />
+					{/if}
 				{/each}
 			</CollapsibleContentTransition>
 		</Collapsible.Root>
