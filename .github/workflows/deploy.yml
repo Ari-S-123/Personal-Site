@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [22]
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -36,8 +36,8 @@ jobs:
         run: pnpm run check
       - name: Run tests
         run: pnpm run test
-#      - name: Run linting check # This is broken because of a regression in eslint
-#        run: pnpm run lint
+      - name: Run linting check
+        run: pnpm run lint
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
