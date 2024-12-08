@@ -93,8 +93,20 @@ const f1MeanFinishingPositionByCountryDataviz: Project = {
 	techStack: [vegaLiteAPI, html, css, javaScript]
 };
 
+const f1DatavizFall2024: Project = {
+	name: 'Visualizing the Evolution of Formula One Performance Metrics (1950-2023)',
+	description:
+		'Mercedes has the best (lowest) mean finishing position in a given season of all time of 3.17 in 2017. ' +
+		'Zakspeed has the worst (highest) mean finishing position in a given season of\n' +
+		'  all time of 35.03 in 1989.',
+	hostedUrl: 'https://ari-s-123.github.io/F1-Dataviz-Fall-2024',
+	repoUrl: 'https://github.com/Ari-S-123/F1-Dataviz-Fall-2024',
+	techStack: [vegaLiteAPI, html, css, javaScript]
+};
+
 export const webDevProjects: Project[] = [poemPortal];
 export const dataVizProjects: Project[] = [
+	f1DatavizFall2024,
 	f1MeanFinishingPositionByCountryDataviz,
 	f1DriverTitleContributionsDataviz,
 	intFootballMeanGoalsDataviz,
