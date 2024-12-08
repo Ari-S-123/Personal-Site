@@ -101,7 +101,7 @@ const f1DatavizFall2024: Project = {
 		'  all time of 35.03 in 1989.',
 	hostedUrl: 'https://ari-s-123.github.io/F1-Dataviz-Fall-2024',
 	repoUrl: 'https://github.com/Ari-S-123/F1-Dataviz-Fall-2024',
-	techStack: [vegaLiteAPI, html, css, javaScript]
+	techStack: [vegaLiteAPI, d3, html, css, javaScript]
 };
 
 export const webDevProjects: Project[] = [poemPortal];
