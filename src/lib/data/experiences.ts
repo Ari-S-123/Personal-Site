@@ -42,8 +42,8 @@ const ta: Experience = {
 	title: 'Teaching Assistant',
 	organization: 'Khoury College of Computer Sciences',
 	description: ['Helping undergraduate students learn about databases.'],
-	startDate: 'January 2024',
-	endDate: 'April 2024',
+	startDate: 'January 2025',
+	endDate: 'April 2025',
 	techStack: []
 };
 
