@@ -35,7 +35,6 @@ describe('Footer', () => {
 		expect(link).toHaveAttribute('rel', 'noreferrer noopener');
 		expect(link).toHaveClass(
 			'expand',
-			'pt-1',
 			'underline-offset-4',
 			'hover:underline',
 			'focus-visible:outline-2',

@@ -26,7 +26,7 @@
 			<Card.Description class="text-4xl text-white font-bold">Ari S.</Card.Description>
 		</Card.Header>
 		<Card.Content class="flex flex-row justify-center gap-2">
-			<b class="text-2xl text-white">Student & SWE</b>
+			<b class="text-2xl text-white">Student & Aspiring SWE</b>
 		</Card.Content>
 		<Card.Footer class="flex flex-row items-center justify-center">
 			<div

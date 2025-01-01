@@ -24,7 +24,7 @@ describe('Profile Card', () => {
 	it('should render name and role', () => {
 		render(Page);
 		expect(screen.getByText('Ari S.')).toHaveClass('text-4xl', 'text-white', 'font-bold');
-		const role = screen.getByText('Student & SWE');
+		const role = screen.getByText('Student & Aspiring SWE');
 		expect(role).toHaveClass('text-2xl', 'text-white');
 		expect(role.tagName).toBe('B');
 	});

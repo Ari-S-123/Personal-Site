@@ -38,4 +38,13 @@ const lexiaLearning: Experience = {
 	techStack: [react, reactNative, typeScript, javaScript, css, html, jest, reactTestingLibrary]
 };
 
-export const experiences: Experience[] = [lexiaLearning, ner];
+const ta: Experience = {
+	title: 'Teaching Assistant',
+	organization: 'Khoury College of Computer Sciences',
+	description: ['Helping undergraduate students learn about databases.'],
+	startDate: 'January 2024',
+	endDate: 'April 2024',
+	techStack: []
+};
+
+export const experiences: Experience[] = [ta, lexiaLearning, ner];

@@ -31,7 +31,7 @@
 				href="https://svelte.dev/docs/kit/introduction"
 				target="_blank"
 				rel="noreferrer noopener"
-				class="expand pt-1 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black mx-2 inline-flex items-center font-svelte text-accent"
+				class="expand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black mx-2 inline-flex items-center font-svelte text-accent"
 			>
 				@sveltejs/kit
 			</HoverCard.Trigger>
