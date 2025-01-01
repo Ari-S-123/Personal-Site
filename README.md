@@ -4,7 +4,7 @@
 
 1. Clone Repo
 
-2. Make sure you are using Node 20.
+2. Make sure you are using Node 22.
 
 3. Run `npm install -g pnpm` to install pnpm.
 
