@@ -8,7 +8,8 @@ import {
 	css,
 	html,
 	javaScript,
-	reactNative
+	reactNative,
+	sql
 } from '$lib/data/tools';
 
 const ner: Experience = {
@@ -41,10 +42,14 @@ const lexiaLearning: Experience = {
 const ta: Experience = {
 	title: 'Teaching Assistant',
 	organization: 'Khoury College of Computer Sciences',
-	description: ['Helping undergraduate students learn about databases.'],
+	description: [
+		'Guiding over 40 students in designing and implementing database schemas, optimizing queries, and debugging complex SQL scripts.',
+		'Holding regular office hours to address questions, clarify course concepts, and mentor students on best practices in database design.',
+		'Providing feedback on assignments by grading submissions, identifying common misconceptions, and offering suggestions for improvement.'
+	],
 	startDate: 'January 2025',
 	endDate: 'April 2025',
-	techStack: []
+	techStack: [sql]
 };
 
 export const experiences: Experience[] = [ta, lexiaLearning, ner];

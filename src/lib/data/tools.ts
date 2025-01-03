@@ -99,3 +99,8 @@ export const css: Tool = {
 	name: 'CSS',
 	color: 'bg-blue-500'
 };
+
+export const sql: Tool = {
+	name: 'SQL',
+	color: 'bg-blue-500'
+};
