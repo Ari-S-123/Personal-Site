@@ -57,7 +57,7 @@ describe('Layout Structure', () => {
 		const main = screen.getByRole('main');
 		expect(main).toBeInTheDocument();
 		const container = main.firstElementChild;
-		expect(container).toHaveClass('bg-card text-card-foreground rounded-lg border shadow-sm');
+		expect(container).toHaveClass('bg-card text-card-foreground rounded-lg border shadow-xs');
 	});
 });
 
