@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @config '../tailwind.config.js';
 
@@ -11,90 +11,90 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
-	}
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
 @utility profile-links {
-	@apply w-12 h-12;
+  @apply w-12 h-12;
 }
 
 @utility expand {
-	@apply shadow-lg hover:scale-105;
+  @apply shadow-lg hover:scale-105;
 }
 
 @layer base {
-	:root {
-		--background: 0 0% 0%;
-		--foreground: 0 0% 100%;
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-		--muted: 240 3.7% 15.9%;
-		--muted-foreground: 240 5% 64.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-		--popover: 240 10% 3.9%;
-		--popover-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-		--card: 240 10% 3.9%;
-		--card-foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-		--border: 240 3.7% 15.9%;
-		--input: 240 3.7% 15.9%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
 
-		--primary: 0 0% 100%;
-		--primary-foreground: 0 0% 0%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
-		--secondary: 240 3.7% 15.9%;
-		--secondary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-		--accent: 12 94% 62%;
-		--accent-foreground: 222 10% 80%;
+    --accent: 12 94% 62%;
+    --accent-foreground: 222 10% 80%;
 
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-		--ring: 240 4.9% 83.9%;
+    --ring: 240 4.9% 83.9%;
 
-		--radius: 0.5rem;
-	}
+    --radius: 0.5rem;
+  }
 }
 
 @layer base {
-	* {
-		@apply border-border;
-	}
+  * {
+    @apply border-border;
+  }
 
-	body {
-		@apply m-0 bg-background text-foreground;
-	}
+  body {
+    @apply m-0 bg-background text-foreground;
+  }
 
-	main {
-		@apply mx-8 my-4 flex flex-col items-center justify-center text-center;
-	}
+  main {
+    @apply mx-8 my-4 flex flex-col items-center justify-center text-center;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 
-	.expand {
-		@apply shadow-lg hover:scale-105 transition-transform duration-300;
-	}
+  .expand {
+    @apply shadow-lg hover:scale-105 transition-transform duration-300;
+  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-	* {
-		animation: none !important;
-		transition: none !important;
-		scroll-behavior: auto !important;
-	}
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 button {
-	@apply cursor-pointer;
+  @apply cursor-pointer;
 }

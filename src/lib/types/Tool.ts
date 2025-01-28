@@ -1,4 +1,4 @@
 export type Tool = {
-	name: string;
-	color: string;
+  name: string;
+  color: string;
 };
