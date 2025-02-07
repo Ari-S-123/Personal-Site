@@ -104,3 +104,8 @@ export const sql: Tool = {
   name: "SQL",
   color: "bg-blue-500"
 };
+
+export const apacheDerby: Tool = {
+  name: "Apache Derby",
+  color: "bg-red-500"
+};

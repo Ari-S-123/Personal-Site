@@ -9,7 +9,8 @@ import {
   html,
   javaScript,
   reactNative,
-  sql
+  sql,
+  apacheDerby
 } from "$lib/data/tools";
 
 const ner: Experience = {
@@ -49,7 +50,7 @@ const ta: Experience = {
   ],
   startDate: "January 2025",
   endDate: "April 2025",
-  techStack: [sql]
+  techStack: [sql, apacheDerby]
 };
 
 export const experiences: Experience[] = [ta, lexiaLearning, ner];
