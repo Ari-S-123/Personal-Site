@@ -33,7 +33,8 @@ const lexiaLearning: Experience = {
   description: [
     "Engineered and refactored front-end components to improve the user experience for millions of students and tens of thousands of teachers on Lexia Learning's Core5 Web and iPad English literacy learning program.",
     "Enhanced A11y compliance by implementing alt text for images to enhance the user experience for thousands of visually impaired children who require screen readers.",
-    "Advanced the implementation of new Skill Check features to better facilitate the appraisal of learners’ progress by educators."
+    "Advanced the implementation of new Skill Check features to better facilitate the appraisal of learners’ progress by educators.",
+    "Collaborated on engineering tasks through routine Scrum stand-up and retro meetings."
   ],
   startDate: "July 2022",
   endDate: "December 2022",
@@ -49,7 +50,7 @@ const ta: Experience = {
     "Providing feedback on assignments by grading submissions, identifying common misconceptions, and offering suggestions for improvement."
   ],
   startDate: "January 2025",
-  endDate: "April 2025",
+  endDate: "Present",
   techStack: [sql, apacheDerby]
 };
 

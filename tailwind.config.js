@@ -54,7 +54,9 @@ const config = {
         sm: "calc(var(--radius) - 4px)"
       },
       fontFamily: {
+        // eslint-disable-next-line quotes
         svelte: ["Overpass", '"Segoe UI"', "Roboto", "ui-sans-serif", "system-ui", "sans-serif"],
+        // eslint-disable-next-line quotes
         body: ["Inter", "Geist", '"Segoe UI"', '"Open Sans"', "Arial", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       keyframes: {
