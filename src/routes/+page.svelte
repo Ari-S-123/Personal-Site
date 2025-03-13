@@ -30,7 +30,7 @@
     </Card.Content>
     <Card.Footer class="flex flex-row items-center justify-center">
       <div aria-label="Links to social media profiles" class="flex flex-row items-center justify-between gap-0.5 my-6">
-        {#each profileLinks as profileLink}
+        {#each profileLinks as profileLink, i (profileLink.url || i)}
           <Button
             variant="link"
             target="_blank"
@@ -59,7 +59,7 @@
         </Collapsible.Trigger>
       </div>
       <CollapsibleContentTransition class="space-y-2" aria-label="List of experiences">
-        {#each experiences as experience}
+        {#each experiences as experience, i (experience.title || i)}
           <Experience {...experience} />
           {#if experiences[experiences.length - 1] !== experience}
             <Separator data-testid="experience-separator" class="my-4" />
@@ -84,7 +84,7 @@
         </Collapsible.Trigger>
       </div>
       <CollapsibleContentTransition class="space-y-2" aria-label="List of web dev projects">
-        {#each webDevProjects as webDevProject}
+        {#each webDevProjects as webDevProject, i (webDevProject.name || i)}
           <Project {...webDevProject} />
           {#if webDevProjects[webDevProjects.length - 1] !== webDevProject}
             <Separator data-testid="web-dev-separator" class="my-4" />
@@ -109,7 +109,7 @@
         </Collapsible.Trigger>
       </div>
       <CollapsibleContentTransition class="space-y-2" aria-label="List of dataviz projects">
-        {#each dataVizProjects as dataVizProject}
+        {#each dataVizProjects as dataVizProject, i (dataVizProject.name || i)}
           <Project {...dataVizProject} />
           {#if dataVizProjects[dataVizProjects.length - 1] !== dataVizProject}
             <Separator data-testid="dataviz-separator" class="my-4" />
