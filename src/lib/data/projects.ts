@@ -50,7 +50,7 @@ const poemPortal: Project = {
 const storyWeaver: Project = {
   name: "Story Weaver",
   description:
-    "The greatest place to write your next story. StoryWeaver is a pioneering collaborative fiction platform that harnesses real-time multi-user editing, AI-powered narrative generation.",
+    "The greatest place to write your next story. Story Weaver is a pioneering collaborative fiction platform that harnesses real-time multi-user editing, AI-powered narrative generation.",
   hostedUrl: "https://storyweaver-next.vercel.app",
   repoUrl: "https://github.com/Ari-S-123/story-weaver",
   techStack: [typeScript, html, css, react, nextJS, tailwind, shadCn, prisma, neon, clerk, liveblocks, ai, vercel]
