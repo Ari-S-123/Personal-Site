@@ -26,9 +26,9 @@ import {
 } from "$lib/data/tools";
 
 const poemPortal: Project = {
-  name: "Poem Portal",
+  name: "PoemPortal",
   description:
-    "Writer's block? Or just bored? Read a random poem because why not. Poem Portal is an app that surprises poetry enthusiasts with a random poem. You can login and save your favorites too.",
+    "Writer's block? Or just bored? Read a random poem because why not. PoemPortal is an app that surprises poetry enthusiasts with a random poem. You can login and save your favorites too.",
   hostedUrl: "https://poemportal.vercel.app",
   repoUrl: "https://github.com/Ari-S-123/Poem-Portal",
   techStack: [
