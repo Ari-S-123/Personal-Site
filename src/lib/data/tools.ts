@@ -5,9 +5,19 @@ export const svelteKit: Tool = {
   color: "bg-accent"
 };
 
+export const nextJS: Tool = {
+  name: "NextJS",
+  color: "bg-white"
+};
+
 export const tailwind: Tool = {
   name: "Tailwind",
   color: "bg-blue-500"
+};
+
+export const shadCn: Tool = {
+  name: "shadcn",
+  color: "bg-white"
 };
 
 export const shadCnSvelte: Tool = {
@@ -108,4 +118,29 @@ export const sql: Tool = {
 export const apacheDerby: Tool = {
   name: "Apache Derby",
   color: "bg-red-500"
+};
+
+export const neon: Tool = {
+  name: "Neon",
+  color: "bg-emerald-500"
+};
+
+export const liveblocks: Tool = {
+  name: "Liveblocks",
+  color: "bg-white"
+};
+
+export const clerk: Tool = {
+  name: "Clerk",
+  color: "bg-purple-500"
+};
+
+export const prisma: Tool = {
+  name: "Prisma",
+  color: "bg-teal-500"
+};
+
+export const ai: Tool = {
+  name: "AI SDK",
+  color: "bg-white"
 };
