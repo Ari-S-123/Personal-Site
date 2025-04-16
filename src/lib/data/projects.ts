@@ -108,7 +108,7 @@ const f1MeanFinishingPositionByCountryDataviz: Project = {
 };
 
 const f1DatavizFall2024: Project = {
-  name: "Visualizing the Evolution of Formula One Performance Metrics (1950-2023)",
+  name: "Visualizing the Evolution of Formula One Performance Metrics (1950-2024)",
   description:
     "Mercedes has the best (lowest) mean finishing position in a given season of all time of 3.17 in 2017. " +
     "Zakspeed has the worst (highest) mean finishing position in a given season of\n" +
