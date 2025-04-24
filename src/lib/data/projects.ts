@@ -118,8 +118,18 @@ const f1DatavizFall2024: Project = {
   techStack: [vegaLiteAPI, d3, html, css, javaScript]
 };
 
+const aiDataStoryGenerator: Project = {
+  name: "Interactive Data Story Generator",
+  description:
+    "An AI-powered data exploration tool on Observable that allows users to generate visualization code and useful insights quickly.",
+  hostedUrl: "https://observablehq.com/d/5440c743ff8be0de",
+  repoUrl: "",
+  techStack: []
+};
+
 export const webDevProjects: Project[] = [storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
+  aiDataStoryGenerator,
   f1DatavizFall2024,
   f1MeanFinishingPositionByCountryDataviz,
   f1DriverTitleContributionsDataviz,
