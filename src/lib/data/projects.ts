@@ -124,7 +124,7 @@ const aiDataStoryGenerator: Project = {
     "An AI-powered data exploration tool on Observable that allows users to generate visualization code and useful insights quickly.",
   hostedUrl: "https://observablehq.com/d/5440c743ff8be0de",
   repoUrl: "",
-  techStack: []
+  techStack: [javaScript]
 };
 
 export const webDevProjects: Project[] = [storyWeaver, poemPortal];
