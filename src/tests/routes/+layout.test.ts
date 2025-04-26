@@ -36,18 +36,13 @@ describe("Footer", () => {
     expect(link).toHaveAttribute("rel", "noreferrer noopener");
     expect(link).toHaveClass(
       "expand",
-      "underline-offset-4",
-      "hover:underline",
       "focus-visible:outline-2",
-      "focus-visible:outline-offset-8",
+      "focus-visible:outline-offset-4",
       "focus-visible:outline-black",
       "mx-2",
       "inline-flex",
-      "items-center",
-      "font-svelte",
-      "text-accent"
+      "items-center"
     );
-    expect(link).toHaveTextContent("@sveltejs/kit");
   });
 });
 

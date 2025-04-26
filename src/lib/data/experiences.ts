@@ -10,7 +10,12 @@ import {
   javaScript,
   reactNative,
   sql,
-  apacheDerby
+  apacheDerby,
+  mySQL,
+  postgres,
+  nextJS,
+  vercel,
+  supabase
 } from "$lib/data/tools";
 
 const ner: Experience = {
@@ -24,7 +29,7 @@ const ner: Experience = {
   ],
   startDate: "September 2021",
   endDate: "April 2023",
-  techStack: [react, typeScript, javaScript, mui, css, html, jest, reactTestingLibrary]
+  techStack: [typeScript, javaScript, css, html, react, mui, jest, reactTestingLibrary]
 };
 
 const lexiaLearning: Experience = {
@@ -38,20 +43,31 @@ const lexiaLearning: Experience = {
   ],
   startDate: "July 2022",
   endDate: "December 2022",
-  techStack: [react, reactNative, typeScript, javaScript, css, html, jest, reactTestingLibrary]
+  techStack: [typeScript, javaScript, css, html, react, reactNative, jest, reactTestingLibrary]
 };
 
 const ta: Experience = {
   title: "Teaching Assistant",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Guiding over 40 students in designing and implementing database schemas, optimizing queries, and debugging complex SQL scripts.",
-    "Holding regular office hours to address questions, clarify course concepts, and mentor students on best practices in database design.",
-    "Providing feedback on assignments by grading submissions, identifying common misconceptions, and offering suggestions for improvement."
+    "Guided over 40 students in designing and implementing database schemas, optimizing queries, and debugging complex SQL scripts.",
+    "Held regular office hours to address questions, clarify course concepts, and mentor students on best practices in database design.",
+    "Provided feedback on assignments by grading submissions, identifying common misconceptions, and offering suggestions for improvement."
   ],
   startDate: "January 2025",
-  endDate: "Present",
-  techStack: [sql, apacheDerby]
+  endDate: "April 2025",
+  techStack: [sql, apacheDerby, mySQL, postgres]
 };
 
-export const experiences: Experience[] = [ta, lexiaLearning, ner];
+const pawToGrader: Experience = {
+  title: "Course Assistant + Software Engineering Co-op",
+  organization: "Khoury College of Computer Sciences",
+  description: [
+    "Engineering Pawtograder: a CI-based autograder, Q&A and CourseOps platform for instructors and students."
+  ],
+  startDate: "May 2025",
+  endDate: "Present",
+  techStack: [typeScript, html, css, react, nextJS, supabase, sql, vercel]
+};
+
+export const experiences: Experience[] = [pawToGrader, ta, lexiaLearning, ner];

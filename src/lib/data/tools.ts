@@ -32,7 +32,7 @@ export const vitest: Tool = {
 
 export const vite: Tool = {
   name: "Vite",
-  color: "bg-green-500"
+  color: "bg-purple-500"
 };
 
 export const svelteTestingLibrary: Tool = {
@@ -143,4 +143,14 @@ export const prisma: Tool = {
 export const ai: Tool = {
   name: "AI SDK",
   color: "bg-white"
+};
+
+export const mySQL: Tool = {
+  name: "MySQL",
+  color: "bg-orange-500"
+};
+
+export const postgres: Tool = {
+  name: "PostgreSQL",
+  color: "bg-blue-500"
 };
