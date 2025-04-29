@@ -99,13 +99,13 @@
       aria-label="Collapsible component containing list of dataviz projects"
     >
       <div class="flex items-center justify-between space-x-4">
-        <h3 class="text-2xl font-bold">DataViz Projects</h3>
+        <h3 class="text-2xl font-bold">Data Viz Projects</h3>
         <Collapsible.Trigger
           class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0" })}
           aria-label="Click this button to expand the dataviz projects section"
         >
           <ChevronsUpDown class="size-4" />
-          <span class="sr-only">Toggle DataViz Projects</span>
+          <span class="sr-only">Toggle Data Viz Projects</span>
         </Collapsible.Trigger>
       </div>
       <CollapsibleContentTransition class="space-y-2" aria-label="List of dataviz projects">

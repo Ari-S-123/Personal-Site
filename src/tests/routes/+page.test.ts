@@ -70,7 +70,7 @@ describe("Projects Sections", () => {
   });
   it("should render data viz projects section with correct heading", () => {
     render(Page);
-    const dataVizHeading = screen.getByRole("heading", { name: "DataViz Projects" });
+    const dataVizHeading = screen.getByRole("heading", { name: "Data Viz Projects" });
     expect(dataVizHeading).toHaveClass("text-2xl", "font-bold");
   });
 });

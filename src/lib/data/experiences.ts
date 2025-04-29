@@ -63,7 +63,7 @@ const pawToGrader: Experience = {
   title: "Course Assistant + Software Engineering Co-op",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Engineering Pawtograder: a CI-based autograder, Q&A and CourseOps platform for instructors and students."
+    "Engineering Pawtograder: a CI-based autograder, Q&A, and CourseOps platform for instructors and students."
   ],
   startDate: "May 2025",
   endDate: "Present",
