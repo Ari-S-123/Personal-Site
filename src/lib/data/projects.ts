@@ -33,8 +33,6 @@ const poemPortal: Project = {
   repoUrl: "https://github.com/Ari-S-123/Poem-Portal",
   techStack: [
     typeScript,
-    html,
-    css,
     svelteKit,
     tailwind,
     shadCnSvelte,
@@ -53,7 +51,7 @@ const storyWeaver: Project = {
     "The greatest place to write your next story. StoryWeaver is a pioneering collaborative fiction platform that harnesses real-time multi-user editing and AI-powered narrative generation.",
   hostedUrl: "https://storyweaver-next.vercel.app",
   repoUrl: "https://github.com/Ari-S-123/story-weaver",
-  techStack: [typeScript, html, css, react, nextJS, tailwind, shadCn, prisma, neon, clerk, liveblocks, ai, vercel]
+  techStack: [typeScript, react, nextJS, tailwind, shadCn, prisma, neon, clerk, liveblocks, ai, vercel]
 };
 
 const videoGameSalesDataviz: Project = {

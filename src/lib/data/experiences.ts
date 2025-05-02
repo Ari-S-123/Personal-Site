@@ -5,8 +5,6 @@ import {
   reactTestingLibrary,
   mui,
   jest,
-  css,
-  html,
   javaScript,
   reactNative,
   sql,
@@ -15,7 +13,8 @@ import {
   postgres,
   nextJS,
   vercel,
-  supabase
+  supabase,
+  tailwind
 } from "$lib/data/tools";
 
 const ner: Experience = {
@@ -29,7 +28,7 @@ const ner: Experience = {
   ],
   startDate: "September 2021",
   endDate: "April 2023",
-  techStack: [typeScript, javaScript, css, html, react, mui, jest, reactTestingLibrary]
+  techStack: [typeScript, react, mui, jest, reactTestingLibrary]
 };
 
 const lexiaLearning: Experience = {
@@ -43,7 +42,7 @@ const lexiaLearning: Experience = {
   ],
   startDate: "July 2022",
   endDate: "December 2022",
-  techStack: [typeScript, javaScript, css, html, react, reactNative, jest, reactTestingLibrary]
+  techStack: [typeScript, javaScript, react, reactNative, jest, reactTestingLibrary]
 };
 
 const ta: Experience = {
@@ -67,7 +66,7 @@ const pawToGrader: Experience = {
   ],
   startDate: "May 2025",
   endDate: "Present",
-  techStack: [typeScript, html, css, react, nextJS, supabase, sql, vercel]
+  techStack: [typeScript, react, nextJS, tailwind, supabase, sql, vercel]
 };
 
 export const experiences: Experience[] = [pawToGrader, ta, lexiaLearning, ner];
