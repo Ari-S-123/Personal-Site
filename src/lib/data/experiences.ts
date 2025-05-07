@@ -66,7 +66,7 @@ const pawToGrader: Experience = {
   ],
   startDate: "May 2025",
   endDate: "Present",
-  techStack: [typeScript, react, nextJS, tailwind, supabase, sql, vercel]
+  techStack: [typeScript, react, nextJS, tailwind, postgres, supabase, vercel]
 };
 
 export const experiences: Experience[] = [pawToGrader, ta, lexiaLearning, ner];
