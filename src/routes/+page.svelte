@@ -20,7 +20,7 @@
         aria-label="Picture of Website Author"
         class="h-72 w-72 rounded-full object-cover border-accent border-4 profile-border self-center"
       >
-        <Avatar.Image src="Professional Profile Pic.jpg" alt="Picture of Ari" />
+        <Avatar.Image src="Profile Pic.jpg" alt="Picture of Ari" />
         <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
       </Avatar.Root>
       <Card.Description class="text-4xl text-white font-bold">Ari S.</Card.Description>

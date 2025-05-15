@@ -19,7 +19,7 @@ describe("Profile Card", () => {
     );
     const avatar = screen.getByAltText("Picture of Ari");
     expect(avatar).toBeInTheDocument();
-    expect(avatar).toHaveAttribute("src", "Professional Profile Pic.jpg");
+    expect(avatar).toHaveAttribute("src", "Profile Pic.jpg");
   });
   it("should render name and role", () => {
     render(Page);
