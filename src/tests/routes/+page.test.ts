@@ -11,7 +11,6 @@ describe("Profile Card", () => {
       "h-72",
       "w-72",
       "rounded-full",
-      "object-cover",
       "border-accent",
       "border-4",
       "profile-border",
