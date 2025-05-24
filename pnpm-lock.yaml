@@ -66,9 +66,6 @@ importers:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
-      lucide-svelte:
-        specifier: ^0.511.0
-        version: 0.511.0(svelte@5.33.1)
       mode-watcher:
         specifier: ^1.0.7
         version: 1.0.7(svelte@5.33.1)
@@ -97,8 +94,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       tailwind-variants:
-        specifier: ^1.0.0
-        version: 1.0.0(tailwindcss@4.1.7)
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@4.1.7)
       tailwindcss:
         specifier: ^4.1.7
         version: 4.1.7
@@ -1322,11 +1319,6 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-svelte@0.511.0:
-    resolution: {integrity: sha512-cSBj1UPKt1EXnj3VBUidBqwHyFQ83pLYiTaQ/67Q5thnaP9IPohL2UXjqEzgSXXklYPYQKaAv+kmVdliDWFjWQ==}
-    peerDependencies:
-      svelte: ^3 || ^4 || ^5.0.0-next.42
-
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -1643,14 +1635,14 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwind-merge@3.0.2:
-    resolution: {integrity: sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==}
+  tailwind-merge@2.6.0:
+    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
   tailwind-merge@3.3.0:
     resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
 
-  tailwind-variants@1.0.0:
-    resolution: {integrity: sha512-2WSbv4ulEEyuBKomOunut65D8UZwxrHoRfYnxGcQNnHqlSCp2+B7Yz2W+yrNDrxRodOXtGD/1oCcKGNBnUqMqA==}
+  tailwind-variants@0.2.1:
+    resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
@@ -3018,10 +3010,6 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-svelte@0.511.0(svelte@5.33.1):
-    dependencies:
-      svelte: 5.33.1
-
   lz-string@1.5.0: {}
 
   magic-string@0.30.17:
@@ -3325,13 +3313,13 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwind-merge@3.0.2: {}
+  tailwind-merge@2.6.0: {}
 
   tailwind-merge@3.3.0: {}
 
-  tailwind-variants@1.0.0(tailwindcss@4.1.7):
+  tailwind-variants@0.2.1(tailwindcss@4.1.7):
     dependencies:
-      tailwind-merge: 3.0.2
+      tailwind-merge: 2.6.0
       tailwindcss: 4.1.7
 
   tailwindcss-animate@1.0.7(tailwindcss@4.1.7):
