@@ -32,8 +32,8 @@ jobs:
         env:
           BASE_PATH: "/${{ github.event.repository.name }}"
         run: pnpm run build
-      #      - name: Run svelte-check # Something is broken here
-      #        run: pnpm run check
+      - name: Run svelte-check
+        run: pnpm run check
       - name: Run tests
         run: pnpm run test
       - name: Run linting check

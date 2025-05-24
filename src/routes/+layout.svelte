@@ -25,7 +25,7 @@
       rel="noreferrer noopener"
       class="expand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black mx-2 inline-flex items-center"
     >
-      <img src="Svelte-Logo.png" alt="Svelte Logo" class="h-6 w-6" />
+      <img src="Svelte-Logo.png" alt="Svelte Logo" class="size-6" />
     </a>
   </h2>
 </footer>

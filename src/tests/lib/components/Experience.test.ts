@@ -105,7 +105,7 @@ describe("Experience Component", () => {
     const items = screen.getAllByRole("listitem");
     expect(items).toHaveLength(mockExperience.description.length);
     items.forEach((item, index) => {
-      expect(item).toHaveTextContent(mockExperience.description[index]);
+      expect(item).toHaveTextContent(mockExperience.description[index]!);
     });
   });
 });

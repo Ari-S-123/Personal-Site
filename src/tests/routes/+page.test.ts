@@ -8,8 +8,7 @@ describe("Profile Card", () => {
     render(Page);
     const avatarContainer = screen.getByLabelText("Picture of Website Author");
     expect(avatarContainer).toHaveClass(
-      "h-72",
-      "w-72",
+      "size-72",
       "rounded-full",
       "border-accent",
       "border-4",
@@ -49,7 +48,7 @@ describe("Layout Structure", () => {
     const main = screen.getByRole("main");
     expect(main).toBeInTheDocument();
     const container = main.firstElementChild;
-    expect(container).toHaveClass("bg-card text-card-foreground rounded-lg border shadow-xs");
+    expect(container).toHaveClass("bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm");
   });
 });
 

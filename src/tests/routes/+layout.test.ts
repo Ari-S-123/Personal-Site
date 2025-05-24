@@ -6,7 +6,6 @@ describe("Head metadata", () => {
   it("should set correct page title and meta description", () => {
     render(Layout);
     expect(document.title).toBe("Aritra Saharay");
-    // eslint-disable-next-line quotes
     const metaDescription = document.head.querySelector('meta[name="description"]');
     expect(metaDescription).not.toBeNull();
     expect(metaDescription?.getAttribute("name")).toBe("description");

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Project } from "$lib/types/Project";
   import { Button } from "$lib/components/ui/button/index";
-  import { ExternalLink } from "lucide-svelte";
+  import { ExternalLink } from "@lucide/svelte";
   import { Badge } from "$lib/components/ui/badge/index";
 
   let { name, description, hostedUrl, repoUrl, techStack }: Project = $props();

@@ -2,7 +2,7 @@ import type { Tool } from "$lib/types/Tool";
 
 export const svelteKit: Tool = {
   name: "SvelteKit",
-  color: "bg-accent"
+  color: "bg-primary"
 };
 
 export const nextJS: Tool = {
@@ -22,7 +22,7 @@ export const shadCn: Tool = {
 
 export const shadCnSvelte: Tool = {
   name: "shadcn-svelte",
-  color: "bg-accent"
+  color: "bg-primary"
 };
 
 export const vitest: Tool = {

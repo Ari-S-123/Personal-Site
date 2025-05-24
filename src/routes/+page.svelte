@@ -9,7 +9,7 @@
   import Project from "$lib/components/Project.svelte";
   import Experience from "$lib/components/Experience.svelte";
   import * as Collapsible from "$lib/components/ui/collapsible/index";
-  import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
+  import { ChevronsUpDown } from "@lucide/svelte";
   import CollapsibleContentTransition from "$lib/components/CollapsibleContentTransition.svelte";
 </script>
 
@@ -18,7 +18,7 @@
     <Card.Header>
       <Avatar.Root
         aria-label="Picture of Website Author"
-        class="h-72 w-72 rounded-full border-accent border-4 profile-border self-center"
+        class="size-72 rounded-full border-primary border-4 profile-border self-center"
       >
         <Avatar.Image src="Profile Pic.jpg" alt="Picture of Ari" class="object-cover" />
         <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
@@ -45,7 +45,7 @@
   </Card.Root>
   <Card.Root aria-label="Card containing list of experiences">
     <Collapsible.Root
-      class="space-y-2 m-4 min-w-[320px] max-w-3xl"
+      class="space-y-2 mx-4 min-w-[320px] max-w-3xl"
       aria-label="Collapsible component containing list of experiences"
     >
       <div class="flex items-center justify-between space-x-4">
@@ -70,7 +70,7 @@
   </Card.Root>
   <Card.Root aria-label="Card containing list of web dev projects">
     <Collapsible.Root
-      class="space-y-2 m-4 min-w-[320px] max-w-3xl"
+      class="space-y-2 mx-4 min-w-[320px] max-w-3xl"
       aria-label="Collapsible component containing list of web dev projects"
     >
       <div class="flex items-center justify-between space-x-4">
@@ -95,7 +95,7 @@
   </Card.Root>
   <Card.Root aria-label="Card containing list of dataviz projects">
     <Collapsible.Root
-      class="space-y-2 m-4 min-w-[320px] max-w-3xl"
+      class="space-y-2 mx-4 min-w-[320px] max-w-3xl"
       aria-label="Collapsible component containing list of dataviz projects"
     >
       <div class="flex items-center justify-between space-x-4">
