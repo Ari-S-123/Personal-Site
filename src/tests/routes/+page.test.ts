@@ -8,9 +8,13 @@ describe("Profile Card", () => {
     render(Page);
     const avatarContainer = screen.getByLabelText("Picture of Website Author");
     expect(avatarContainer).toHaveClass(
+      "relative",
+      "flex",
+      "shrink-0",
+      "overflow-hidden",
       "size-72",
       "rounded-full",
-      "border-accent",
+      "border-primary",
       "border-4",
       "profile-border",
       "self-center"
