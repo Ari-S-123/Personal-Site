@@ -54,6 +54,14 @@ const storyWeaver: Project = {
   techStack: [typeScript, react, nextJS, tailwind, shadCn, prisma, neon, clerk, liveblocks, ai, vercel]
 };
 
+const mixSmart: Project = {
+  name: "MixSmart",
+  description: "Coming Soon 👀",
+  hostedUrl: "",
+  repoUrl: "",
+  techStack: []
+};
+
 const videoGameSalesDataviz: Project = {
   name: "Video game sales over the years",
   description:
@@ -125,7 +133,7 @@ const aiDataStoryGenerator: Project = {
   techStack: [javaScript, html, css]
 };
 
-export const webDevProjects: Project[] = [storyWeaver, poemPortal];
+export const webDevProjects: Project[] = [mixSmart, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
   f1DatavizFall2024,
