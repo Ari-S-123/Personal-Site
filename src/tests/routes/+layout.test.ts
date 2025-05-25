@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import Layout from "../../routes/+layout.svelte";
-import { render, screen } from "@testing-library/svelte";
+import { render, screen, within } from "@testing-library/svelte";
 
 describe("Head metadata", () => {
   it("should set correct page title and meta description", () => {
@@ -18,30 +18,31 @@ describe("Head metadata", () => {
 describe("Footer", () => {
   it("should render the footer with correct text and structure", () => {
     render(Layout);
-    const footer = screen.getByLabelText("footer");
+    const footer = screen.getByLabelText("Site Footer");
     expect(footer).toHaveClass("text-center");
+    expect(footer).toBeVisible();
 
-    const heading = screen.getByRole("heading", { level: 2 });
-    expect(heading).toHaveClass("inline-flex", "items-center", "justify-center");
-    expect(heading).toHaveAttribute("aria-label", "Technology used to build this static site");
+    const link = within(footer).getByLabelText("SvelteKit Link");
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute("href", "https://svelte.dev");
 
-    expect(screen.getByText("Powered by")).toBeInTheDocument();
+    const heading = within(link).getByRole("heading", {
+      name: /Technology used to build this static personal site/i
+    });
+    expect(heading).toBeVisible();
+    expect(heading).toHaveTextContent("Powered by");
+
+    const svelteLogo = within(heading).getByAltText("Svelte Logo");
+    expect(svelteLogo).toBeVisible();
+    expect(svelteLogo).toHaveAttribute("src", "Svelte-Logo.png");
   });
+
   it("should render SvelteKit link with correct attributes", () => {
     render(Layout);
-    const link = screen.getByLabelText("SvelteKit Docs Link");
-    expect(link).toHaveAttribute("href", "https://svelte.dev/docs/kit/introduction");
+    const link = screen.getByLabelText("SvelteKit Link");
+    expect(link).toHaveAttribute("href", "https://svelte.dev");
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noreferrer noopener");
-    expect(link).toHaveClass(
-      "expand",
-      "focus-visible:outline-2",
-      "focus-visible:outline-offset-4",
-      "focus-visible:outline-black",
-      "mx-2",
-      "inline-flex",
-      "items-center"
-    );
   });
 });
 

@@ -11,18 +11,32 @@
   import * as Collapsible from "$lib/components/ui/collapsible/index";
   import { ChevronsUpDown } from "@lucide/svelte";
   import CollapsibleContentTransition from "$lib/components/CollapsibleContentTransition.svelte";
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 </script>
 
 <main class="max-w-3xl min-w-[320px] w-full flex flex-col m-0 items-center justify-center gap-4">
   <Card.Root>
     <Card.Header>
-      <Avatar.Root
-        aria-label="Picture of Website Author"
-        class="size-72 rounded-full border-primary border-4 profile-border self-center"
-      >
-        <Avatar.Image src="Profile Pic.jpg" alt="Picture of Ari" class="object-cover" />
-        <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
-      </Avatar.Root>
+      <HoverCard.Root>
+        <HoverCard.Trigger
+          href="https://external-preview.redd.it/created-an-advert-for-mclaren-v0-j_q7-0MUhxQ3OY9Gyuv3Aallms79WCvX5rtBhsIrErs.jpg?width=640&crop=smart&auto=webp&s=898a1e1a70c79eaa3482ef55c4fd15051776588d"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
+          aria-label="Easter Egg Link"
+        >
+          <Avatar.Root
+            aria-label="Picture of Website Author"
+            class="size-72 rounded-full border-primary border-4 profile-border self-center"
+          >
+            <Avatar.Image src="Profile Pic.jpg" alt="Picture of Ari" class="object-cover" />
+            <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
+          </Avatar.Root>
+        </HoverCard.Trigger>
+        <HoverCard.Content class="flex justify-center items-center gap-1 w-20" aria-label="Easter Egg"
+          >🐰🥚</HoverCard.Content
+        >
+      </HoverCard.Root>
       <Card.Description class="text-4xl text-white font-bold">Ari S.</Card.Description>
     </Card.Header>
     <Card.Content class="flex flex-row justify-center gap-2">
