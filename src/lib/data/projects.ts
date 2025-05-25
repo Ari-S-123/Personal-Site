@@ -1,4 +1,4 @@
-import type { Project } from "$lib/types/Project";
+import type { Project } from "$lib/types";
 import {
   svelteKit,
   tailwind,
@@ -23,7 +23,7 @@ import {
   neon,
   clerk,
   ai
-} from "$lib/data/tools";
+} from "./tools";
 
 const poemPortal: Project = {
   name: "PoemPortal",

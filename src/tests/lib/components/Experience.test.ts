@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/svelte";
-import Experience from "../../../lib/components/Experience.svelte";
-import type { Experience as ExperienceType } from "../../../lib/types/Experience";
+import Experience from "../../../lib/components/experience.svelte";
+import type { Experience as ExperienceType } from "../../../lib/types/experience";
 
 describe("Experience Component", () => {
   const mockExperience: ExperienceType = {

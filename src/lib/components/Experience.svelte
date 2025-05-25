@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Experience } from "$lib/types/Experience";
+  import type { Experience } from "$lib/types";
   import { Badge } from "$lib/components/ui/badge/index";
 
   let { title, organization, description, startDate, endDate, techStack }: Experience = $props();

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import Page from "../../routes/+page.svelte";
 import { render, screen } from "@testing-library/svelte";
-import { profileLinks } from "$lib/data/links";
+import { profileLinks } from "$lib/data";
 
 describe("Profile Card", () => {
   it("should render the profile avatar with correct attributes", () => {
@@ -16,12 +16,11 @@ describe("Profile Card", () => {
       "rounded-full",
       "border-primary",
       "border-4",
-      "profile-border",
-      "self-center"
+      "profile-border"
     );
     const avatar = screen.getByAltText("Picture of Ari");
     expect(avatar).toBeInTheDocument();
-    expect(avatar).toHaveAttribute("src", "Profile Pic.jpg");
+    expect(avatar).toHaveAttribute("src", "Profile-Pic.webp");
   });
   it("should render name and role", () => {
     render(Page);
@@ -40,7 +39,7 @@ describe("Profile Card", () => {
       expect(button).toHaveAttribute("target", "_blank");
       expect(button).toHaveAttribute("rel", "noreferrer noopener");
       const img = screen.getByAltText(link.iconAlt);
-      expect(img).toHaveAttribute("src", link.iconPath);
+      expect(img).toHaveAttribute("srcset", link.iconPath);
       expect(img).toHaveClass("profile-links", "expand");
     });
   });

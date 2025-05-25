@@ -3,6 +3,7 @@
   import CalendarDaysIcon from "@lucide/svelte/icons/calendar-days";
   import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
+  import Image from "$lib/components/image.svelte";
 
   let { children } = $props();
 </script>
@@ -40,13 +41,13 @@
         class="inline-flex items-center justify-center gap-1"
       >
         Powered by
-        <img src="Svelte-Logo.png" alt="Svelte Logo" class="size-6" />
+        <Image url="Svelte-Logo.webp" description="Svelte Logo" className="size-6" />
       </h2>
     </HoverCard.Trigger>
     <HoverCard.Content class="w-80">
       <div class="flex justify-evenly space-x-4 items-center">
         <Avatar.Root class="m-0">
-          <Avatar.Image src="Svelte-Logo.png" alt="Svelte Logo" />
+          <Avatar.Image src="Svelte-Logo.webp" alt="Svelte Logo" />
           <Avatar.Fallback>SK</Avatar.Fallback>
         </Avatar.Root>
         <div class="space-y-1" aria-label="Technology Information">

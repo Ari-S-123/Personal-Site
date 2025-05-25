@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Lint => Check => Test
 
 on:
   push:
@@ -28,34 +28,9 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: build
-        env:
-          BASE_PATH: "/${{ github.event.repository.name }}"
-        run: pnpm run build
+      - name: Run linting check
+        run: pnpm run lint
       - name: Run svelte-check
         run: pnpm run check
       - name: Run tests
         run: pnpm run test
-      - name: Run linting check
-        run: pnpm run lint
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # this should match the `pages` option in your adapter-static options
-          path: "build"
-  deploy:
-    needs: build_site
-    runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4

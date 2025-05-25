@@ -1,25 +1,26 @@
 <script lang="ts">
   import * as Avatar from "$lib/components/ui/avatar";
   import { Button, buttonVariants } from "$lib/components/ui/button";
-  import { profileLinks } from "$lib/data/links";
+  import { profileLinks } from "$lib/data";
   import * as Card from "$lib/components/ui/card/index";
   import { Separator } from "$lib/components/ui/separator/index";
-  import { webDevProjects, dataVizProjects } from "$lib/data/projects";
-  import { experiences } from "$lib/data/experiences";
-  import Project from "$lib/components/Project.svelte";
-  import Experience from "$lib/components/Experience.svelte";
+  import { webDevProjects, dataVizProjects } from "$lib/data";
+  import { experiences } from "$lib/data";
+  import Project from "$lib/components/project.svelte";
+  import Experience from "$lib/components/experience.svelte";
   import * as Collapsible from "$lib/components/ui/collapsible/index";
   import { ChevronsUpDown } from "@lucide/svelte";
-  import CollapsibleContentTransition from "$lib/components/CollapsibleContentTransition.svelte";
+  import CollapsibleContentTransition from "$lib/components/collapsible-content-transition.svelte";
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
+  import Image from "$lib/components/image.svelte";
 </script>
 
 <main class="max-w-3xl min-w-[320px] w-full flex flex-col m-0 items-center justify-center gap-4">
   <Card.Root>
-    <Card.Header>
+    <Card.Header class="justify-items-center">
       <HoverCard.Root>
         <HoverCard.Trigger
-          href="https://external-preview.redd.it/created-an-advert-for-mclaren-v0-j_q7-0MUhxQ3OY9Gyuv3Aallms79WCvX5rtBhsIrErs.jpg?width=640&crop=smart&auto=webp&s=898a1e1a70c79eaa3482ef55c4fd15051776588d"
+          href="Easter-Egg.webp"
           target="_blank"
           rel="noreferrer noopener"
           class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
@@ -27,9 +28,9 @@
         >
           <Avatar.Root
             aria-label="Picture of Website Author"
-            class="size-72 rounded-full border-primary border-4 profile-border self-center"
+            class="size-72 rounded-full border-primary border-4 profile-border"
           >
-            <Avatar.Image src="Profile Pic.jpg" alt="Picture of Ari" class="object-cover" />
+            <Avatar.Image src="Profile-Pic.webp" alt="Picture of Ari" class="object-cover" />
             <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
           </Avatar.Root>
         </HoverCard.Trigger>
@@ -51,7 +52,7 @@
             rel="noreferrer noopener"
             href={profileLink.url}
             aria-label={profileLink.ariaLabel}
-            ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="profile-links expand" />
+            ><Image url={profileLink.iconPath} description={profileLink.iconAlt} className="profile-links expand" />
           </Button>
         {/each}
       </div>

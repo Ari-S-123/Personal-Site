@@ -1,4 +1,4 @@
-import type { Tool } from "$lib/types/Tool";
+import type { Tool } from "./tool";
 
 export type Experience = {
   title: string;

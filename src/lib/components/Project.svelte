@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Project } from "$lib/types/Project";
+  import type { Project } from "$lib/types";
   import { Button } from "$lib/components/ui/button/index";
   import { ExternalLink } from "@lucide/svelte";
   import { Badge } from "$lib/components/ui/badge/index";

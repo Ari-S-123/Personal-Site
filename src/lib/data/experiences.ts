@@ -1,4 +1,4 @@
-import type { Experience } from "$lib/types/Experience";
+import type { Experience } from "$lib/types";
 import {
   react,
   typeScript,
@@ -15,7 +15,7 @@ import {
   vercel,
   supabase,
   tailwind
-} from "$lib/data/tools";
+} from "./tools";
 
 const ner: Experience = {
   title: "Software Group Lead/Developer",

@@ -34,7 +34,7 @@ describe("Footer", () => {
 
     const svelteLogo = within(heading).getByAltText("Svelte Logo");
     expect(svelteLogo).toBeVisible();
-    expect(svelteLogo).toHaveAttribute("src", "Svelte-Logo.png");
+    expect(svelteLogo).toHaveAttribute("srcset", "Svelte-Logo.webp");
   });
 
   it("should render SvelteKit link with correct attributes", () => {
