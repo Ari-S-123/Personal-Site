@@ -12,7 +12,6 @@
   import { ChevronsUpDown } from "@lucide/svelte";
   import CollapsibleContentTransition from "$lib/components/collapsible-content-transition.svelte";
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
-  import Image from "$lib/components/image.svelte";
 </script>
 
 <main class="max-w-3xl min-w-[320px] w-full flex flex-col m-0 items-center justify-center gap-4">
@@ -52,7 +51,7 @@
             rel="noreferrer noopener"
             href={profileLink.url}
             aria-label={profileLink.ariaLabel}
-            ><Image url={profileLink.iconPath} description={profileLink.iconAlt} className="profile-links expand" />
+            ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="profile-links expand" />
           </Button>
         {/each}
       </div>

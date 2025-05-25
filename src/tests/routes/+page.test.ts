@@ -39,7 +39,7 @@ describe("Profile Card", () => {
       expect(button).toHaveAttribute("target", "_blank");
       expect(button).toHaveAttribute("rel", "noreferrer noopener");
       const img = screen.getByAltText(link.iconAlt);
-      expect(img).toHaveAttribute("srcset", link.iconPath);
+      expect(img).toHaveAttribute("src", link.iconPath);
       expect(img).toHaveClass("profile-links", "expand");
     });
   });
