@@ -154,3 +154,8 @@ export const postgres: Tool = {
   name: "PostgreSQL",
   color: "bg-blue-500"
 };
+
+export const java: Tool = {
+  name: "Java",
+  color: "bg-orange-500"
+};
