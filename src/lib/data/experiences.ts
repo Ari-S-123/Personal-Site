@@ -15,7 +15,8 @@ import {
   vercel,
   supabase,
   tailwind,
-  java
+  java,
+  chakraUI
 } from "./tools";
 
 const ner: Experience = {
@@ -64,11 +65,11 @@ const pawToGrader: Experience = {
   organization: "Khoury College of Computer Sciences",
   description: [
     "Engineering Pawtograder: a CI-based autograder, Q&A, and CourseOps platform for instructors and students (https://pawtograder.com).",
-    "Developing lecture notes, assignments, and labs written in Java for CS 3100 Program Design and Implementation 2."
+    "Developing lecture notes, assignments, and labs for CS 3100 Program Design and Implementation 2."
   ],
   startDate: "May 2025",
   endDate: "Present",
-  techStack: [typeScript, react, nextJS, tailwind, postgres, supabase, vercel, java]
+  techStack: [typeScript, react, nextJS, tailwind, chakraUI, postgres, supabase, vercel, java]
 };
 
 export const experiences: Experience[] = [pawToGrader, ta, lexiaLearning, ner];

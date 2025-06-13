@@ -159,3 +159,8 @@ export const java: Tool = {
   name: "Java",
   color: "bg-orange-500"
 };
+
+export const chakraUI: Tool = {
+  name: "Chakra UI",
+  color: "bg-green-500"
+};
