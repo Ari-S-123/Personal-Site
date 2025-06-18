@@ -1,4 +1,4 @@
-# [Just a personal resume site](https://ari-s-123.github.io/Personal-Site)
+# [Just a personal resume site](https://www.ari-s.dev)
 
 ## To replicate
 
