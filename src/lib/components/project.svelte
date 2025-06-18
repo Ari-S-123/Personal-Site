@@ -20,6 +20,7 @@
           size="icon"
           variant="outline"
           aria-label={`Link to ${name}'s GitHub repository`}
+          class="glowing-border"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +49,7 @@
           size="icon"
           variant="outline"
           aria-label={`Link to where ${name} is hosted`}
+          class="glowing-border"
         >
           <ExternalLink class="w-4 h-4" />
         </Button>

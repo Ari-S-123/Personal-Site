@@ -43,7 +43,7 @@
         <img src="Svelte-Logo.webp" alt="Svelte Logo" class="size-6" />
       </h2>
     </HoverCard.Trigger>
-    <HoverCard.Content class="w-80">
+    <HoverCard.Content class="w-80 glowing-border">
       <div class="flex justify-evenly space-x-4 items-center">
         <Avatar.Root class="m-0">
           <Avatar.Image src="Svelte-Logo.webp" alt="Svelte Logo" />

@@ -15,7 +15,7 @@
 </script>
 
 <main class="max-w-3xl min-w-[320px] w-full flex flex-col m-0 items-center justify-center gap-4">
-  <Card.Root>
+  <Card.Root class="glowing-border">
     <Card.Header class="justify-items-center">
       <HoverCard.Root>
         <HoverCard.Trigger
@@ -25,15 +25,12 @@
           class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
           aria-label="Easter Egg Link"
         >
-          <Avatar.Root
-            aria-label="Picture of Website Author"
-            class="size-72 rounded-full border-primary border-4 profile-border"
-          >
+          <Avatar.Root aria-label="Picture of Website Author" class="size-72 rounded-full glowing-border">
             <Avatar.Image src="Profile-Pic.webp" alt="Picture of Ari" class="object-cover" />
             <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
           </Avatar.Root>
         </HoverCard.Trigger>
-        <HoverCard.Content class="flex justify-center items-center gap-1 w-20" aria-label="Easter Egg"
+        <HoverCard.Content class="flex justify-center items-center gap-1 w-20 glowing-border" aria-label="Easter Egg"
           >🐰🥚</HoverCard.Content
         >
       </HoverCard.Root>
@@ -51,13 +48,13 @@
             rel="noreferrer noopener"
             href={profileLink.url}
             aria-label={profileLink.ariaLabel}
-            ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="profile-links expand" />
+            ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="size-12 expand" />
           </Button>
         {/each}
       </div>
     </Card.Footer>
   </Card.Root>
-  <Card.Root aria-label="Card containing list of experiences">
+  <Card.Root class="glowing-border" aria-label="Card containing list of experiences">
     <Collapsible.Root
       class="space-y-2 mx-4 min-w-[320px] max-w-3xl"
       aria-label="Collapsible component containing list of experiences"
@@ -65,7 +62,7 @@
       <div class="flex items-center justify-between space-x-4">
         <h3 class="text-2xl font-bold">Experience</h3>
         <Collapsible.Trigger
-          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0" })}
+          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 glowing-border" })}
           aria-label="Click this button to expand the experience section"
         >
           <ChevronsUpDown class="size-4" />
@@ -82,7 +79,7 @@
       </CollapsibleContentTransition>
     </Collapsible.Root>
   </Card.Root>
-  <Card.Root aria-label="Card containing list of web dev projects">
+  <Card.Root class="glowing-border" aria-label="Card containing list of web dev projects">
     <Collapsible.Root
       class="space-y-2 mx-4 min-w-[320px] max-w-3xl"
       aria-label="Collapsible component containing list of web dev projects"
@@ -90,7 +87,7 @@
       <div class="flex items-center justify-between space-x-4">
         <h3 class="text-2xl font-bold">Web Dev Projects</h3>
         <Collapsible.Trigger
-          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0" })}
+          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 glowing-border" })}
           aria-label="Click this button to expand the web dev projects section"
         >
           <ChevronsUpDown class="size-4" />
@@ -107,7 +104,7 @@
       </CollapsibleContentTransition>
     </Collapsible.Root>
   </Card.Root>
-  <Card.Root aria-label="Card containing list of dataviz projects">
+  <Card.Root class="glowing-border" aria-label="Card containing list of dataviz projects">
     <Collapsible.Root
       class="space-y-2 mx-4 min-w-[320px] max-w-3xl"
       aria-label="Collapsible component containing list of dataviz projects"
@@ -115,7 +112,7 @@
       <div class="flex items-center justify-between space-x-4">
         <h3 class="text-2xl font-bold">Data Viz Projects</h3>
         <Collapsible.Trigger
-          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0" })}
+          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 glowing-border" })}
           aria-label="Click this button to expand the dataviz projects section"
         >
           <ChevronsUpDown class="size-4" />

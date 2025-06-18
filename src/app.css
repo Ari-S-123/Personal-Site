@@ -1,6 +1,42 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: -90deg;
+}
+
+@property --clr-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.488 0.243 264.376);
+}
+
+@property --clr-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.696 0.17 162.48);
+}
+
+@property --clr-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.769 0.188 70.08);
+}
+
+@property --clr-4 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.627 0.265 303.9);
+}
+
+@property --clr-5 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.645 0.246 16.439);
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -36,6 +72,7 @@
   --accent: oklch(0.274 0.006 286.033);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
+  --primary-glow: oklch(0.646 0.222 41.116 / 40%);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.646 0.222 41.116);
@@ -80,6 +117,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-primary-glow: var(--primary-glow);
   --color-ring: var(--ring);
   --color-radius: var(--radius);
   --color-sidebar-background: var(--sidebar-background);
@@ -106,12 +144,49 @@
   }
 }
 
-@utility profile-links {
-  @apply size-12;
-}
-
 @utility expand {
   @apply shadow-lg hover:scale-105;
+}
+
+@layer components {
+  .glowing-border {
+    --gradient-glow: var(--clr-1), var(--clr-2), var(--clr-3), var(--clr-4), var(--clr-5), var(--clr-1);
+    --border-width: 3px;
+    border: var(--border-width) solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      conic-gradient(from var(--glow-deg), var(--gradient-glow)) border-box;
+    position: relative;
+    isolation: isolate;
+    animation: glow 10s infinite linear;
+  }
+
+  .glowing-border::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    z-index: -1;
+    background: var(--card);
+    inset: 0.5rem;
+    filter: blur(2rem);
+  }
+
+  .glowing-border::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    z-index: -2;
+    inset: -1.5rem;
+    background: conic-gradient(from var(--glow-deg), var(--gradient-glow));
+    filter: blur(2rem);
+    opacity: 0.25;
+  }
+}
+
+@keyframes glow {
+  100% {
+    --glow-deg: 270deg;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

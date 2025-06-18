@@ -14,9 +14,7 @@ describe("Profile Card", () => {
       "overflow-hidden",
       "size-72",
       "rounded-full",
-      "border-primary",
-      "border-4",
-      "profile-border"
+      "glowing-border"
     );
     const avatar = screen.getByAltText("Picture of Ari");
     expect(avatar).toBeInTheDocument();
@@ -40,7 +38,7 @@ describe("Profile Card", () => {
       expect(button).toHaveAttribute("rel", "noreferrer noopener");
       const img = screen.getByAltText(link.iconAlt);
       expect(img).toHaveAttribute("src", link.iconPath);
-      expect(img).toHaveClass("profile-links", "expand");
+      expect(img).toHaveClass("size-12", "expand");
     });
   });
 });
