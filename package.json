@@ -53,6 +53,7 @@
   "dependencies": {
     "@eslint/js": "^9.29.0",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "formsnap": "^2.0.1",
     "globals": "^16.2.0"
   }
