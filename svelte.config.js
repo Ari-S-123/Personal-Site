@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-vercel";
+import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 const config = {
@@ -12,8 +12,10 @@ const config = {
 
   kit: {
     adapter: adapter({
-      runtime: "nodejs22.x",
-      regions: ["sfo1"]
+      pages: "build",
+      assets: "build",
+      precompress: true,
+      strict: true
     })
   }
 };
