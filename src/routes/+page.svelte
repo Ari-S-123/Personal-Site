@@ -25,7 +25,7 @@
           class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
           aria-label="Easter Egg Link"
         >
-          <Avatar.Root aria-label="Picture of Website Author" class="size-72 rounded-full border-1 glowing-border">
+          <Avatar.Root aria-label="Picture of Website Author" class="size-64 rounded-full border-1 glowing-border">
             <Avatar.Image src="Profile-Pic.webp" alt="Picture of Ari" class="object-cover" />
             <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
           </Avatar.Root>
@@ -39,19 +39,19 @@
     <Card.Content class="flex flex-row justify-center gap-2">
       <b class="text-2xl text-white">Student & Aspiring SWE</b>
     </Card.Content>
-    <Card.Footer class="flex flex-row items-center justify-center">
-      <div aria-label="Links to social media profiles" class="flex flex-row items-center justify-between gap-0.5 my-6">
-        {#each profileLinks as profileLink, i (profileLink.url || i)}
-          <Button
-            variant="link"
-            target="_blank"
-            rel="noreferrer noopener"
-            href={profileLink.url}
-            aria-label={profileLink.ariaLabel}
-            ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="size-12 expand" />
-          </Button>
-        {/each}
-      </div>
+    <Card.Footer aria-label="Links to social media profiles" class="flex flex-row items-center justify-between">
+      {#each profileLinks as profileLink, i (profileLink.url || i)}
+        <Button
+          variant="link"
+          target="_blank"
+          rel="noreferrer noopener"
+          href={profileLink.url}
+          aria-label={profileLink.ariaLabel}
+          size="icon"
+          class="size-12"
+          ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="expand" />
+        </Button>
+      {/each}
     </Card.Footer>
   </Card.Root>
   <Card.Root class="glowing-border" aria-label="Card containing list of experiences">

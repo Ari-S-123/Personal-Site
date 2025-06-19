@@ -12,8 +12,9 @@ describe("Profile Card", () => {
       "flex",
       "shrink-0",
       "overflow-hidden",
-      "size-72",
+      "size-64",
       "rounded-full",
+      "border-1",
       "glowing-border"
     );
     const avatar = screen.getByAltText("Picture of Ari");
@@ -30,7 +31,15 @@ describe("Profile Card", () => {
   it("should render social media links with correct attributes", () => {
     render(Page);
     const socialContainer = screen.getByLabelText("Links to social media profiles");
-    expect(socialContainer).toHaveClass("flex", "flex-row", "items-center", "justify-between", "gap-0.5", "my-6");
+    expect(socialContainer).toHaveClass(
+      "flex",
+      "flex-row",
+      "items-center",
+      "justify-between",
+      "gap-0.5",
+      "px-6",
+      "[.border-t]:pt-6"
+    );
     profileLinks.forEach((link) => {
       const button = screen.getByRole("link", { name: link.ariaLabel });
       expect(button).toHaveAttribute("href", link.url);
