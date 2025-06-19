@@ -36,7 +36,6 @@ describe("Profile Card", () => {
       "flex-row",
       "items-center",
       "justify-between",
-      "gap-0.5",
       "px-6",
       "[.border-t]:pt-6"
     );
