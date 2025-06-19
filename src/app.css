@@ -144,10 +144,6 @@
   }
 }
 
-@utility expand {
-  @apply shadow-lg hover:scale-105;
-}
-
 @layer components {
   .glowing-border {
     --gradient-glow: var(--clr-1), var(--clr-2), var(--clr-3), var(--clr-4), var(--clr-5), var(--clr-1);

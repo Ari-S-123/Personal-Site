@@ -25,7 +25,7 @@
           class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
           aria-label="Easter Egg Link"
         >
-          <Avatar.Root aria-label="Picture of Website Author" class="size-72 rounded-full glowing-border">
+          <Avatar.Root aria-label="Picture of Website Author" class="size-72 rounded-full border-1 glowing-border">
             <Avatar.Image src="Profile-Pic.webp" alt="Picture of Ari" class="object-cover" />
             <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
           </Avatar.Root>
@@ -62,7 +62,7 @@
       <div class="flex items-center justify-between space-x-4">
         <h3 class="text-2xl font-bold">Experience</h3>
         <Collapsible.Trigger
-          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 glowing-border" })}
+          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 border-1 glowing-border" })}
           aria-label="Click this button to expand the experience section"
         >
           <ChevronsUpDown class="size-4" />
@@ -87,7 +87,7 @@
       <div class="flex items-center justify-between space-x-4">
         <h3 class="text-2xl font-bold">Web Dev Projects</h3>
         <Collapsible.Trigger
-          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 glowing-border" })}
+          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 border-1 glowing-border" })}
           aria-label="Click this button to expand the web dev projects section"
         >
           <ChevronsUpDown class="size-4" />
@@ -112,7 +112,7 @@
       <div class="flex items-center justify-between space-x-4">
         <h3 class="text-2xl font-bold">Data Viz Projects</h3>
         <Collapsible.Trigger
-          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 glowing-border" })}
+          class={buttonVariants({ variant: "ghost", size: "icon", class: "w-9 p-0 border-1 glowing-border" })}
           aria-label="Click this button to expand the dataviz projects section"
         >
           <ChevronsUpDown class="size-4" />
