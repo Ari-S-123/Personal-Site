@@ -164,3 +164,33 @@ export const chakraUI: Tool = {
   name: "Chakra UI",
   color: "bg-green-500"
 };
+
+export const playwright: Tool = {
+  name: "Playwright",
+  color: "bg-green-700"
+};
+
+export const sentry: Tool = {
+  name: "Sentry",
+  color: "bg-pink-500"
+};
+
+export const bugsink: Tool = {
+  name: "Bugsink",
+  color: "bg-blue-500"
+};
+
+export const browserStack: Tool = {
+  name: "BrowserStack",
+  color: "bg-orange-500"
+};
+
+export const awsChime: Tool = {
+  name: "AWS Chime",
+  color: "bg-amber-500"
+};
+
+export const recharts: Tool = {
+  name: "Recharts",
+  color: "bg-teal-500"
+};

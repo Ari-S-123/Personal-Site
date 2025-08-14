@@ -16,7 +16,13 @@ import {
   supabase,
   tailwind,
   java,
-  chakraUI
+  chakraUI,
+  recharts,
+  playwright,
+  sentry,
+  bugsink,
+  browserStack,
+  awsChime
 } from "./tools";
 
 const ner: Experience = {
@@ -39,7 +45,7 @@ const lexiaLearning: Experience = {
   description: [
     "Engineered and refactored front-end components to improve the user experience for millions of students and tens of thousands of teachers on Lexia Learning's Core5 Web and iPad English literacy learning program.",
     "Enhanced A11y compliance by implementing alt text for images to enhance the user experience for thousands of visually impaired children who require screen readers.",
-    "Advanced the implementation of new Skill Check features to better facilitate the appraisal of learners’ progress by educators.",
+    "Advanced the development of new Skill Check features for more effective appraisal of learners’ progress.",
     "Collaborated on engineering tasks through routine Scrum stand-up and retro meetings."
   ],
   startDate: "July 2022",
@@ -64,12 +70,31 @@ const pawToGrader: Experience = {
   title: "Course Assistant + Software Engineering Co-op",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Engineering Pawtograder: a CI-based autograder, Q&A, and CourseOps platform for instructors and students (https://pawtograder.com).",
-    "Developing lecture notes, assignments, and labs for CS 3100 Program Design and Implementation 2."
+    "Engineering Pawtograder: an open-source CI-based Autograder, Q&A, Office Hours, and CourseOps platform for Computer Science instructors and students (https://pawtograder.com).",
+    "Spearheaded the development of the Office Hours feature with live collaboration through text/video chat, notifications and other cool and useful features.",
+    "Implemented analytics and data visualizations using Postgres Views to reveal actionable insights to instructors on how their students use flashcards for learning.",
+    "Improved end-to-end test coverage substantially using Playwright.",
+    "Drafting lecture notes, assignments, and labs in Java for CS 3100 Program Design and Implementation 2."
   ],
   startDate: "May 2025",
   endDate: "Present",
-  techStack: [typeScript, react, nextJS, tailwind, chakraUI, postgres, supabase, vercel, java]
+  techStack: [
+    typeScript,
+    react,
+    nextJS,
+    tailwind,
+    chakraUI,
+    recharts,
+    postgres,
+    supabase,
+    playwright,
+    browserStack,
+    sentry,
+    bugsink,
+    awsChime,
+    vercel,
+    java
+  ]
 };
 
 export const experiences: Experience[] = [pawToGrader, ta, lexiaLearning, ner];
