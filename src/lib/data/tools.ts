@@ -180,9 +180,9 @@ export const bugsink: Tool = {
   color: "bg-blue-500"
 };
 
-export const browserStack: Tool = {
-  name: "BrowserStack",
-  color: "bg-orange-500"
+export const argosCI: Tool = {
+  name: "Argos CI",
+  color: "bg-purple-500"
 };
 
 export const awsChime: Tool = {

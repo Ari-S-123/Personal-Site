@@ -21,7 +21,7 @@ import {
   playwright,
   sentry,
   bugsink,
-  browserStack,
+  argosCI,
   awsChime
 } from "./tools";
 
@@ -88,7 +88,7 @@ const pawToGrader: Experience = {
     postgres,
     supabase,
     playwright,
-    browserStack,
+    argosCI,
     sentry,
     bugsink,
     awsChime,
