@@ -40,7 +40,7 @@ const ner: Experience = {
 };
 
 const lexiaLearning: Experience = {
-  title: "Software Engineering Co-op",
+  title: "Software Engineering Intern",
   organization: "Lexia Learning",
   description: [
     "Engineered and refactored front-end components to improve the user experience for millions of students and tens of thousands of teachers on Lexia Learning's Core5 Web and iPad English literacy learning program.",
@@ -53,8 +53,8 @@ const lexiaLearning: Experience = {
   techStack: [typeScript, javaScript, react, reactNative, jest, reactTestingLibrary]
 };
 
-const ta: Experience = {
-  title: "Teaching Assistant",
+const ta1: Experience = {
+  title: "Teaching Assistant - Databases",
   organization: "Khoury College of Computer Sciences",
   description: [
     "Guided over 40 students in designing and implementing database schemas, optimizing queries, and debugging complex SQL scripts.",
@@ -67,17 +67,17 @@ const ta: Experience = {
 };
 
 const pawToGrader: Experience = {
-  title: "Course Assistant + Software Engineering Co-op",
+  title: "Software Engineering Intern + Course Assistant",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Engineering Pawtograder: an open-source CI-based Autograder, Q&A, Office Hours, and CourseOps platform for Computer Science instructors and students (https://pawtograder.com).",
+    "Engineered Pawtograder: an open-source CI-based Autograder, Q&A, Office Hours, and CourseOps platform for Computer Science instructors and students (https://pawtograder.com).",
     "Spearheaded the development of the Office Hours feature with live collaboration through text/video chat, notifications and other cool and useful features.",
     "Implemented analytics and data visualizations using Postgres Views to reveal actionable insights to instructors on how their students use flashcards for learning.",
     "Improved end-to-end test coverage substantially using Playwright.",
-    "Drafting lecture notes, assignments, and labs in Java for CS 3100 Program Design and Implementation 2."
+    "Drafted lecture notes and labs in Java for CS 3100 Program Design and Implementation 2."
   ],
   startDate: "May 2025",
-  endDate: "Present",
+  endDate: "August 2025",
   techStack: [
     typeScript,
     react,
@@ -97,4 +97,15 @@ const pawToGrader: Experience = {
   ]
 };
 
-export const experiences: Experience[] = [pawToGrader, ta, lexiaLearning, ner];
+const ta2: Experience = {
+  title: "Teaching Assistant - Software Engineering",
+  organization: "Khoury College of Computer Sciences",
+  description: [
+    "Guiding over 20 graduate students with a focus on modern software development life cycle models (Agile), requirements analysis, testing strategies, software architecture, and design patterns."
+  ],
+  startDate: "September 2025",
+  endDate: "Present",
+  techStack: [typeScript]
+};
+
+export const experiences: Experience[] = [ta2, pawToGrader, ta1, lexiaLearning, ner];
