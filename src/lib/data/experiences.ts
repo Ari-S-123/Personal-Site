@@ -101,7 +101,7 @@ const ta2: Experience = {
   title: "Teaching Assistant - Software Engineering",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Guiding over 20 graduate students with a focus on modern software development life cycle models (Agile), requirements analysis, testing strategies, software architecture, and design patterns."
+    "Guiding graduate students with a focus on modern software development life cycle models (Agile), requirements analysis, testing strategies, software architecture, and design patterns."
   ],
   startDate: "September 2025",
   endDate: "Present",
