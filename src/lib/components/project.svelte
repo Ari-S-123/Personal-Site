@@ -51,13 +51,13 @@
           aria-label={`Link to where ${name} is hosted`}
           class="glowing-border"
         >
-          <ExternalLink class="w-4 h-4" />
+          <ExternalLink class="h-4 w-4" />
         </Button>
       {/if}
     </div>
   </div>
   {#if techStack.length > 0}
-    <div aria-label={`Tech stack for ${name}`} class="flex flex-row flex-wrap gap-2 my-2">
+    <div aria-label={`Tech stack for ${name}`} class="my-2 flex flex-row flex-wrap gap-2">
       {#each techStack as tech, i (tech.name || i)}
         <Badge class={tech.color}>{tech.name}</Badge>
       {/each}

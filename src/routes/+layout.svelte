@@ -16,7 +16,7 @@
   />
   <meta
     name="keywords"
-    content="HTML, CSS, Tailwind, JavaScript, TypeScript, NodeJS, Svelte, SvelteKit, Web Development, Software Engineer, Software Developer, Software Engineering, Personal Website, Resume, Portfolio, Projects, Experience, Skills, Aritra Saharay"
+    content="HTML, CSS, Tailwind, JavaScript, TypeScript, NodeJS, Svelte, SvelteKit, Shadcn, Shadcn-Svelte, Web Development, Software Engineer, Software Developer, Software Engineering, Personal Website, Resume, Portfolio, Projects, Experience, Skills, Aritra Saharay"
   />
   <meta name="author" content="Aritra Saharay" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,7 +26,7 @@
   {@render children?.()}
 </main>
 
-<footer aria-label="Site Footer" class="text-center mb-2">
+<footer aria-label="Site Footer" class="mb-2 text-center">
   <HoverCard.Root>
     <HoverCard.Trigger
       href="https://svelte.dev"
@@ -43,8 +43,8 @@
         <img src="Svelte-Logo.webp" alt="Svelte Logo" class="size-6" />
       </h2>
     </HoverCard.Trigger>
-    <HoverCard.Content class="w-80 glowing-border">
-      <div class="flex justify-evenly space-x-4 items-center">
+    <HoverCard.Content class="glowing-border w-80">
+      <div class="flex items-center justify-evenly space-x-4">
         <Avatar.Root class="m-0">
           <Avatar.Image src="Svelte-Logo.webp" alt="Svelte Logo" />
           <Avatar.Fallback>SK</Avatar.Fallback>
@@ -54,7 +54,7 @@
           <p class="text-sm" aria-label="Technology Description">Cybernetically enhanced web apps.</p>
           <div class="flex items-center pt-2">
             <CalendarDaysIcon class="mr-2 size-4 opacity-70" />
-            <span class="text-muted-foreground text-xs" aria-label="Date Author started using technology">
+            <span class="text-xs text-muted-foreground" aria-label="Date Author started using technology">
               Joined October 2024
             </span>
           </div>
