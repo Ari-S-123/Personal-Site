@@ -30,7 +30,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-svelte": "^3.12.3",
+    "eslint-plugin-svelte": "^3.12.4",
     "jsdom": "^27.0.0",
     "mode-watcher": "^1.1.0",
     "paneforge": "1.0.2",
