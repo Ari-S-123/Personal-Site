@@ -26,7 +26,7 @@
           aria-label="Easter Egg Link"
         >
           <Avatar.Root aria-label="Picture of Website Author" class="glowing-border size-64 rounded-full border-1">
-            <Avatar.Image src="Profile-Pic.webp" alt="Picture of Ari" class="object-cover" />
+            <Avatar.Image src="Profile-Pic.png" alt="Picture of Ari" class="object-cover" />
             <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
           </Avatar.Root>
         </HoverCard.Trigger>
