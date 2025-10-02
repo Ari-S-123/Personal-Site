@@ -109,7 +109,8 @@
   </Card.Root>
   <Input
     type="text"
-    placeholder="Enter Search Term"
+    aria-label="Search"
+    placeholder="🔎"
     class="glowing-border max-w-xs"
     bind:value={filterText}
     oninput={handleSearch}

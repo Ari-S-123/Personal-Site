@@ -87,7 +87,7 @@ describe("Projects Sections", () => {
 describe("Search Input", () => {
   it("should render search input with correct attributes", () => {
     render(Page);
-    const searchInput = screen.getByPlaceholderText("Enter Search Term");
+    const searchInput = screen.getByPlaceholderText("🔎");
     expect(searchInput).toHaveClass("glowing-border", "max-w-xs");
   });
 });

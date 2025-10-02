@@ -22,7 +22,9 @@ import {
   sentry,
   bugsink,
   argosCI,
-  awsChime
+  awsChime,
+  prisma,
+  express
 } from "./tools";
 
 const ner: Experience = {
@@ -36,7 +38,7 @@ const ner: Experience = {
   ],
   startDate: "September 2021",
   endDate: "April 2023",
-  techStack: [typeScript, react, mui, jest, reactTestingLibrary]
+  techStack: [typeScript, react, mui, jest, reactTestingLibrary, prisma, express]
 };
 
 const lexiaLearning: Experience = {
@@ -73,8 +75,8 @@ const pawToGrader: Experience = {
     "Engineered Pawtograder: an open-source CI-based Autograder, Q&A, Office Hours, and CourseOps platform for Computer Science instructors and students (https://pawtograder.com).",
     "Spearheaded the development of the Office Hours feature with live collaboration through text/video chat, notifications and other cool and useful features.",
     "Implemented analytics and data visualizations using Postgres Views to reveal actionable insights to instructors on how their students use flashcards for learning.",
-    "Improved end-to-end test coverage substantially using Playwright.",
-    "Drafted lecture notes and labs in Java for CS 3100 Program Design and Implementation 2."
+    "Improved end-to-end test coverage substantially.",
+    "Drafted lecture notes and labs for CS 3100 Program Design and Implementation 2."
   ],
   startDate: "May 2025",
   endDate: "August 2025",
