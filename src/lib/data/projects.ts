@@ -22,7 +22,8 @@ import {
   liveblocks,
   neon,
   clerk,
-  ai
+  ai,
+  v0
 } from "./tools";
 
 const poemPortal: Project = {
@@ -52,6 +53,15 @@ const storyWeaver: Project = {
   hostedUrl: "https://storyweaver-next.vercel.app",
   repoUrl: "https://github.com/Ari-S-123/story-weaver",
   techStack: [typeScript, react, nextJS, tailwind, shadCn, prisma, neon, clerk, liveblocks, ai, vercel]
+};
+
+const infiniteApps: Project = {
+  name: "Infinite Applications",
+  description:
+    "Experience the absurdity of modern tech recruiting. Watch as a developer attempts to apply for jobs with impossible requirements—one rejection at a time.",
+  hostedUrl: "https://infinite-apps.vercel.app",
+  repoUrl: "https://github.com/Ari-S-123/infinite-apps",
+  techStack: [v0, nextJS, react, tailwind, shadCn, typeScript]
 };
 
 const mixSmart: Project = {
@@ -133,7 +143,7 @@ const aiDataStoryGenerator: Project = {
   techStack: [javaScript, html, css]
 };
 
-export const webDevProjects: Project[] = [mixSmart, storyWeaver, poemPortal];
+export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
   f1DatavizFall2024,

@@ -199,3 +199,8 @@ export const express: Tool = {
   name: "Express",
   color: "bg-blue-500"
 };
+
+export const v0: Tool = {
+  name: "v0",
+  color: "bg-white"
+};
