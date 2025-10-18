@@ -204,3 +204,23 @@ export const v0: Tool = {
   name: "v0",
   color: "bg-white"
 };
+
+export const resend: Tool = {
+  name: "Resend",
+  color: "bg-white"
+};
+
+export const apify: Tool = {
+  name: "Apify",
+  color: "bg-green-500"
+};
+
+export const redpanda: Tool = {
+  name: "Redpanda",
+  color: "bg-red-500"
+};
+
+export const openai: Tool = {
+  name: "OpenAI",
+  color: "bg-white"
+};

@@ -23,7 +23,12 @@ import {
   neon,
   clerk,
   ai,
-  v0
+  v0,
+  resend,
+  postgres,
+  apify,
+  redpanda,
+  openai
 } from "./tools";
 
 const poemPortal: Project = {
@@ -143,6 +148,23 @@ const aiDataStoryGenerator: Project = {
   techStack: [javaScript, html, css]
 };
 
+const mailSplit: Project = {
+  name: "MailSplit",
+  description:
+    "A modern support email management dashboard with emails automatically assigned to the most appropriate team using RAG.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/SUPATEAM-2025/mailsplit",
+  techStack: [typeScript, react, nextJS, tailwind, shadCn, resend, supabase, postgres]
+};
+const antiVenom: Project = {
+  name: "AntiVenom",
+  description:
+    "Automated self-improving defense pattern generation against ever-evolving prompt injection attack patterns.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/Ari-S-123/antivenom",
+  techStack: [typeScript, react, nextJS, tailwind, shadCn, postgres, apify, openai, ai, redpanda]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -154,3 +176,4 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
+export const hackathonProjects: Project[] = [antiVenom, mailSplit];

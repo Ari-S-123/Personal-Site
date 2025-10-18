@@ -4,7 +4,7 @@
   import { profileLinks } from "$lib/data";
   import * as Card from "$lib/components/ui/card/index";
   import { Separator } from "$lib/components/ui/separator/index";
-  import { webDevProjects, dataVizProjects } from "$lib/data";
+  import { webDevProjects, dataVizProjects, hackathonProjects } from "$lib/data";
   import { experiences } from "$lib/data";
   import Project from "$lib/components/project.svelte";
   import Experience from "$lib/components/experience.svelte";
@@ -53,6 +53,15 @@
    */
   const filteredDataVizProjects = $derived(
     dataVizProjects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
+  );
+
+  /**
+   * Reactive filtered array of hackathon projects.
+   * Automatically updates when normalizedFilterText changes.
+   * @type {typeof hackathonProjects}
+   */
+  const filteredHackathonProjects = $derived(
+    hackathonProjects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
   );
 
   /**
@@ -190,6 +199,33 @@
             <Project {...dataVizProject} />
             {#if filteredDataVizProjects[filteredDataVizProjects.length - 1] !== dataVizProject}
               <Separator data-testid="dataviz-separator" class="my-4" />
+            {/if}
+          {/each}
+        </CollapsibleContentTransition>
+      </Collapsible.Root>
+    </Card.Root>
+  {/if}
+  {#if filteredHackathonProjects.length > 0}
+    <Card.Root class="glowing-border" aria-label="Card containing list of hackathon projects">
+      <Collapsible.Root
+        class="mx-4 max-w-3xl min-w-[320px] space-y-2"
+        aria-label="Collapsible component containing list of hackathon projects"
+      >
+        <div class="flex items-center justify-between space-x-4">
+          <h3 class="text-2xl font-bold">Hackathon Projects</h3>
+          <Collapsible.Trigger
+            class={buttonVariants({ variant: "ghost", size: "icon", class: "glowing-border w-9 border-1 p-0" })}
+            aria-label="Click this button to expand the hackathon projects section"
+          >
+            <ChevronsUpDown class="size-4" />
+            <span class="sr-only">Toggle Hackathon Projects</span>
+          </Collapsible.Trigger>
+        </div>
+        <CollapsibleContentTransition class="space-y-2" aria-label="List of hackathon projects">
+          {#each filteredHackathonProjects as hackathonProject, i (hackathonProject.name || i)}
+            <Project {...hackathonProject} />
+            {#if filteredHackathonProjects[filteredHackathonProjects.length - 1] !== hackathonProject}
+              <Separator data-testid="hackathon-separator" class="my-4" />
             {/if}
           {/each}
         </CollapsibleContentTransition>
