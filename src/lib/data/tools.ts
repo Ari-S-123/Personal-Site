@@ -224,3 +224,23 @@ export const openai: Tool = {
   name: "OpenAI",
   color: "bg-white"
 };
+
+export const convex: Tool = {
+  name: "Convex",
+  color: "bg-yellow-500"
+};
+
+export const workOs: Tool = {
+  name: "WorkOS",
+  color: "bg-purple-500"
+};
+
+export const anthropic: Tool = {
+  name: "Anthropic",
+  color: "bg-orange-500"
+};
+
+export const daytona: Tool = {
+  name: "Daytona",
+  color: "bg-white"
+};

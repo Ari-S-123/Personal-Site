@@ -28,7 +28,11 @@ import {
   postgres,
   apify,
   redpanda,
-  openai
+  openai,
+  convex,
+  workOs,
+  anthropic,
+  daytona
 } from "./tools";
 
 const poemPortal: Project = {
@@ -165,6 +169,15 @@ const antiVenom: Project = {
   techStack: [typeScript, react, nextJS, tailwind, shadCn, postgres, apify, openai, ai, redpanda]
 };
 
+const eli5: Project = {
+  name: "ELI5",
+  description:
+    "Visual research paper explainer for Gen Z and younger users affected by online brainrot and short attention spans.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/Ari-S-123/eli5",
+  techStack: [typeScript, react, nextJS, tailwind, shadCn, convex, workOs, anthropic, ai, daytona]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -176,4 +189,4 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
-export const hackathonProjects: Project[] = [antiVenom, mailSplit];
+export const hackathonProjects: Project[] = [eli5, antiVenom, mailSplit];
