@@ -178,6 +178,15 @@ const eli5: Project = {
   techStack: [typeScript, react, nextJS, tailwind, shadCn, convex, workOs, anthropic, ai, daytona]
 };
 
+const investorFit: Project = {
+  name: "InvestorFit",
+
+  description: "Filtering out the noise faster than ever before.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/Ari-S-123/investor-fit",
+  techStack: [typeScript, react, nextJS, tailwind, shadCn, clerk, openai, ai]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -189,4 +198,4 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
-export const hackathonProjects: Project[] = [eli5, antiVenom, mailSplit];
+export const hackathonProjects: Project[] = [investorFit, eli5, antiVenom, mailSplit];
