@@ -69,7 +69,7 @@ const ta1: Experience = {
 };
 
 const pawToGrader: Experience = {
-  title: "Software Engineering Intern + Course Assistant",
+  title: "Founding Engineer Intern + Course Assistant",
   organization: "Khoury College of Computer Sciences",
   description: [
     "Engineered Pawtograder: an open-source CI-based Autograder, Q&A, Office Hours, and CourseOps platform for Computer Science instructors and students (https://pawtograder.com).",
