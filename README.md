@@ -4,7 +4,7 @@
 
 1. Clone the repository.
 
-2. Make sure you are using the latest Node LTS version at the time of the last commit [v22.x].
+2. Make sure you are using the latest Node LTS version at the time of the last commit [v24.x].
 
 3. Run `npm i -g pnpm@latest-10` to install pnpm.
 
