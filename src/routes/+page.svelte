@@ -4,7 +4,7 @@
   import { profileLinks } from "$lib/data";
   import * as Card from "$lib/components/ui/card/index";
   import { Separator } from "$lib/components/ui/separator/index";
-  import { webDevProjects, dataVizProjects, hackathonProjects } from "$lib/data";
+  import { webDevProjects, dataVizProjects, hackathonProjects, mlProjects } from "$lib/data";
   import { experiences } from "$lib/data";
   import Project from "$lib/components/project.svelte";
   import Experience from "$lib/components/experience.svelte";
@@ -62,6 +62,15 @@
    */
   const filteredHackathonProjects = $derived(
     hackathonProjects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
+  );
+
+  /**
+   * Reactive filtered array of ml projects.
+   * Automatically updates when normalizedFilterText changes.
+   * @type {typeof mlProjects}
+   */
+  const filteredMlProjects = $derived(
+    mlProjects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
   );
 
   /**
@@ -145,6 +154,33 @@
             <Experience {...experience} />
             {#if filteredExperiences[filteredExperiences.length - 1] !== experience}
               <Separator data-testid="experience-separator" class="my-4" />
+            {/if}
+          {/each}
+        </CollapsibleContentTransition>
+      </Collapsible.Root>
+    </Card.Root>
+  {/if}
+  {#if filteredMlProjects.length > 0}
+    <Card.Root class="glowing-border" aria-label="Card containing list of ml projects">
+      <Collapsible.Root
+        class="mx-4 max-w-3xl min-w-[320px] space-y-2"
+        aria-label="Collapsible component containing list of ml projects"
+      >
+        <div class="flex items-center justify-between space-x-4">
+          <h3 class="text-2xl font-bold">ML Projects</h3>
+          <Collapsible.Trigger
+            class={buttonVariants({ variant: "ghost", size: "icon", class: "glowing-border w-9 border p-0" })}
+            aria-label="Click this button to expand the ml projects section"
+          >
+            <ChevronsUpDown class="size-4" />
+            <span class="sr-only">Toggle ML Projects</span>
+          </Collapsible.Trigger>
+        </div>
+        <CollapsibleContentTransition class="space-y-2" aria-label="List of ml projects">
+          {#each filteredMlProjects as mlProject, i (mlProject.name || i)}
+            <Project {...mlProject} />
+            {#if filteredMlProjects[filteredMlProjects.length - 1] !== mlProject}
+              <Separator data-testid="ml-separator" class="my-4" />
             {/if}
           {/each}
         </CollapsibleContentTransition>

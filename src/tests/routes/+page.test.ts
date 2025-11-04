@@ -77,10 +77,20 @@ describe("Projects Sections", () => {
     const webDevHeading = screen.getByRole("heading", { name: "Web Dev Projects" });
     expect(webDevHeading).toHaveClass("text-2xl", "font-bold");
   });
+  it("should render ml projects section with correct heading", () => {
+    render(Page);
+    const mlHeading = screen.getByRole("heading", { name: "ML Projects" });
+    expect(mlHeading).toHaveClass("text-2xl", "font-bold");
+  });
   it("should render data viz projects section with correct heading", () => {
     render(Page);
     const dataVizHeading = screen.getByRole("heading", { name: "Data Viz Projects" });
     expect(dataVizHeading).toHaveClass("text-2xl", "font-bold");
+  });
+  it("should render hackathon projects section with correct heading", () => {
+    render(Page);
+    const hackathonHeading = screen.getByRole("heading", { name: "Hackathon Projects" });
+    expect(hackathonHeading).toHaveClass("text-2xl", "font-bold");
   });
 });
 

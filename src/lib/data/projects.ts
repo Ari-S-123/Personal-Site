@@ -32,7 +32,9 @@ import {
   convex,
   workOs,
   anthropic,
-  daytona
+  daytona,
+  python,
+  pytorch
 } from "./tools";
 
 const poemPortal: Project = {
@@ -187,6 +189,23 @@ const investorFit: Project = {
   techStack: [typeScript, react, nextJS, tailwind, shadCn, clerk, openai, ai]
 };
 
+const piiMasking: Project = {
+  name: "Open Source PII Masking",
+  description:
+    "Finetuning open source transformer models with better data for improved performance in PII masking in more adversarial conditions and diverse contexts.",
+  hostedUrl: "",
+  repoUrl: "",
+  techStack: [python, pytorch]
+};
+
+const selfHealingCloud: Project = {
+  name: "Self-Healing Cloud",
+  description: "AI agent that automates compliance for your AWS Cloud Infrastructure.",
+  hostedUrl: "",
+  repoUrl: "",
+  techStack: [python]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -199,3 +218,4 @@ export const dataVizProjects: Project[] = [
   videoGameSalesDataviz
 ];
 export const hackathonProjects: Project[] = [investorFit, eli5, antiVenom, mailSplit];
+export const mlProjects: Project[] = [piiMasking, selfHealingCloud];

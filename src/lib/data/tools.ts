@@ -244,3 +244,13 @@ export const daytona: Tool = {
   name: "Daytona",
   color: "bg-white"
 };
+
+export const python: Tool = {
+  name: "Python",
+  color: "bg-yellow-500"
+};
+
+export const pytorch: Tool = {
+  name: "PyTorch",
+  color: "bg-orange-500"
+};
