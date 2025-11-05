@@ -254,3 +254,8 @@ export const pytorch: Tool = {
   name: "PyTorch",
   color: "bg-orange-500"
 };
+
+export const aws: Tool = {
+  name: "AWS",
+  color: "bg-amber-500"
+};

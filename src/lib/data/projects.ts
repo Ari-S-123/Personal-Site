@@ -34,7 +34,8 @@ import {
   anthropic,
   daytona,
   python,
-  pytorch
+  pytorch,
+  aws
 } from "./tools";
 
 const poemPortal: Project = {
@@ -203,7 +204,7 @@ const selfHealingCloud: Project = {
   description: "AI agent that automates compliance for your AWS Cloud Infrastructure.",
   hostedUrl: "",
   repoUrl: "",
-  techStack: [python]
+  techStack: [python, aws]
 };
 
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
