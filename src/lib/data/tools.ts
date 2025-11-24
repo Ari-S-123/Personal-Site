@@ -259,3 +259,23 @@ export const aws: Tool = {
   name: "AWS",
   color: "bg-amber-500"
 };
+
+export const vanta: Tool = {
+  name: "Vanta",
+  color: "bg-purple-500"
+};
+
+export const go: Tool = {
+  name: "Go",
+  color: "bg-blue-500"
+};
+
+export const raft: Tool = {
+  name: "RAFT",
+  color: "bg-purple-500"
+};
+
+export const terraform: Tool = {
+  name: "Terraform",
+  color: "bg-purple-500"
+};

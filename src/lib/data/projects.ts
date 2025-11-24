@@ -35,7 +35,11 @@ import {
   daytona,
   python,
   pytorch,
-  aws
+  aws,
+  vanta,
+  go,
+  terraform,
+  raft
 } from "./tools";
 
 const poemPortal: Project = {
@@ -199,12 +203,22 @@ const piiMasking: Project = {
   techStack: [python, pytorch]
 };
 
-const selfHealingCloud: Project = {
-  name: "Self-Healing Cloud",
-  description: "AI agent that automates compliance for your AWS Cloud Infrastructure.",
+const distributedKVStore: Project = {
+  name: "Distributed KV Store",
+  description:
+    "A distributed key-value store database system that can switch between RAFT-backed Leader-Follower and Leaderless architectures. Useful for benchmarking the performance of these two architectures and understanding the trade-offs between them.",
   hostedUrl: "",
   repoUrl: "",
-  techStack: [python, aws]
+  techStack: [go, raft, terraform, aws]
+};
+
+const terraFix: Project = {
+  name: "TerraFix",
+  description:
+    "AI agent that automates compliance for your AWS Cloud Infrastructure, by automatically opening pull requests to fix issues within your infrastructure-as-code configuration.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/Ari-S-123/TerraFix",
+  techStack: [python, aws, vanta, anthropic]
 };
 
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
@@ -219,4 +233,5 @@ export const dataVizProjects: Project[] = [
   videoGameSalesDataviz
 ];
 export const hackathonProjects: Project[] = [investorFit, eli5, antiVenom, mailSplit];
-export const mlProjects: Project[] = [piiMasking, selfHealingCloud];
+export const distributedSystemsProjects: Project[] = [terraFix, distributedKVStore];
+export const mlProjects: Project[] = [piiMasking];

@@ -4,7 +4,13 @@
   import { profileLinks } from "$lib/data";
   import * as Card from "$lib/components/ui/card/index";
   import { Separator } from "$lib/components/ui/separator/index";
-  import { webDevProjects, dataVizProjects, hackathonProjects, mlProjects } from "$lib/data";
+  import {
+    webDevProjects,
+    dataVizProjects,
+    hackathonProjects,
+    distributedSystemsProjects,
+    mlProjects
+  } from "$lib/data";
   import { experiences } from "$lib/data";
   import Project from "$lib/components/project.svelte";
   import Experience from "$lib/components/experience.svelte";
@@ -62,6 +68,15 @@
    */
   const filteredHackathonProjects = $derived(
     hackathonProjects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
+  );
+
+  /**
+   * Reactive filtered array of distributed systems projects.
+   * Automatically updates when normalizedFilterText changes.
+   * @type {typeof distributedSystemsProjects}
+   */
+  const filteredDistributedSystemsProjects = $derived(
+    distributedSystemsProjects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
   );
 
   /**
@@ -181,6 +196,33 @@
             <Project {...mlProject} />
             {#if filteredMlProjects[filteredMlProjects.length - 1] !== mlProject}
               <Separator data-testid="ml-separator" class="my-4" />
+            {/if}
+          {/each}
+        </CollapsibleContentTransition>
+      </Collapsible.Root>
+    </Card.Root>
+  {/if}
+  {#if filteredDistributedSystemsProjects.length > 0}
+    <Card.Root class="glowing-border" aria-label="Card containing list of distributed systems projects">
+      <Collapsible.Root
+        class="mx-4 max-w-3xl min-w-[320px] space-y-2"
+        aria-label="Collapsible component containing list of distributed systems projects"
+      >
+        <div class="flex items-center justify-between space-x-4">
+          <h3 class="text-2xl font-bold">Distributed Systems Projects</h3>
+          <Collapsible.Trigger
+            class={buttonVariants({ variant: "ghost", size: "icon", class: "glowing-border w-9 border-1 p-0" })}
+            aria-label="Click this button to expand the distributed systems projects section"
+          >
+            <ChevronsUpDown class="size-4" />
+            <span class="sr-only">Toggle Distributed Systems Projects</span>
+          </Collapsible.Trigger>
+        </div>
+        <CollapsibleContentTransition class="space-y-2" aria-label="List of distributed systems projects">
+          {#each filteredDistributedSystemsProjects as distributedSystemsProject, i (distributedSystemsProject.name || i)}
+            <Project {...distributedSystemsProject} />
+            {#if filteredDistributedSystemsProjects[filteredDistributedSystemsProjects.length - 1] !== distributedSystemsProject}
+              <Separator data-testid="distributed-systems-separator" class="my-4" />
             {/if}
           {/each}
         </CollapsibleContentTransition>
