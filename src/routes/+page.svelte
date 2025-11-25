@@ -98,7 +98,7 @@
 </script>
 
 <main class="m-0 flex w-full max-w-3xl min-w-[320px] flex-col items-center justify-center gap-4">
-  <Card.Root class="glowing-border">
+  <Card.Root class="glowing-border min-w-[320px]">
     <Card.Header class="justify-items-center">
       <HoverCard.Root>
         <HoverCard.Trigger
@@ -117,10 +117,10 @@
           >🐰🥚</HoverCard.Content
         >
       </HoverCard.Root>
-      <Card.Description class="text-4xl font-bold text-white">Ari S.</Card.Description>
+      <Card.Description class="text-4xl font-bold text-white">Ari</Card.Description>
     </Card.Header>
     <Card.Content class="flex flex-row justify-center gap-2">
-      <b class="text-2xl text-white">Student & Aspiring SWE</b>
+      <b class="text-2xl text-white">👨🏽‍💻</b>
     </Card.Content>
     <Card.Footer aria-label="Links to social media profiles" class="flex flex-row items-center justify-between">
       {#each profileLinks as profileLink, i (profileLink.url || i)}

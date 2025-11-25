@@ -59,7 +59,7 @@
     "formsnap": "^2.0.1",
     "globals": "^16.5.0"
   },
-  "pnpm": {
+  "bun": {
     "onlyBuiltDependencies": [
       "esbuild"
     ]

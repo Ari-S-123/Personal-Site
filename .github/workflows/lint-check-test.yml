@@ -20,20 +20,20 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 10
+          bun-version: latest
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+          cache: "bun"
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
       - name: Run linting check
-        run: pnpm run lint
+        run: bun run lint
       - name: Run svelte-check
-        run: pnpm run check
+        run: bun run check
       - name: Run tests
-        run: pnpm run test
+        run: bun run test

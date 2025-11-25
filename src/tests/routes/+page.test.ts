@@ -25,8 +25,8 @@ describe("Profile Card", () => {
   });
   it("should render name and role", () => {
     render(Page);
-    expect(screen.getByText("Ari S.")).toHaveClass("text-4xl", "text-white", "font-bold");
-    const role = screen.getByText("Student & Aspiring SWE");
+    expect(screen.getByText("Ari")).toHaveClass("text-4xl", "text-white", "font-bold");
+    const role = screen.getByText("👨🏽‍💻");
     expect(role).toHaveClass("text-2xl", "text-white");
     expect(role.tagName).toBe("B");
   });
@@ -59,7 +59,9 @@ describe("Layout Structure", () => {
     const main = screen.getByRole("main");
     expect(main).toBeInTheDocument();
     const container = main.firstElementChild;
-    expect(container).toHaveClass("bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm");
+    expect(container).toHaveClass(
+      "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm min-w-[320px]"
+    );
   });
 });
 
