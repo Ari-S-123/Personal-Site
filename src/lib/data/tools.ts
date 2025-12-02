@@ -279,3 +279,8 @@ export const terraform: Tool = {
   name: "Terraform",
   color: "bg-purple-500"
 };
+
+export const peft: Tool = {
+  name: "PEFT",
+  color: "bg-yellow-500"
+};

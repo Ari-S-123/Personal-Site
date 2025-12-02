@@ -39,7 +39,8 @@ import {
   vanta,
   go,
   terraform,
-  raft
+  raft,
+  peft
 } from "./tools";
 
 const poemPortal: Project = {
@@ -197,10 +198,10 @@ const investorFit: Project = {
 const piiMasking: Project = {
   name: "Open Source PII Masking",
   description:
-    "Finetuning open source transformer models with better data for improved performance in PII masking in more adversarial conditions and diverse contexts.",
+    "Improving PII masking performance in adversarial conditions and diverse contexts by fine-tuning DeBERTaV3 (transformer) with PyTorch, PEFT (DoRA), and higher quality synthetic data.",
   hostedUrl: "",
   repoUrl: "",
-  techStack: [python, pytorch]
+  techStack: [python, pytorch, peft]
 };
 
 const distributedKVStore: Project = {
