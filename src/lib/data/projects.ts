@@ -40,7 +40,13 @@ import {
   go,
   terraform,
   raft,
-  peft
+  peft,
+  gemini,
+  googleMaps,
+  gsap,
+  zustand,
+  wavefile,
+  webAudioAPI
 } from "./tools";
 
 const poemPortal: Project = {
@@ -180,7 +186,7 @@ const antiVenom: Project = {
 const eli5: Project = {
   name: "ELI5",
   description:
-    "Visual research paper explainer for Gen Z and younger users affected by online brainrot and short attention spans.",
+    "Visual research paper explainer for Gen Z and younger users affected by online brainrot and short attention spans. Top 8 Finalist project at the Daytona Hacksprint in October 2025.",
   hostedUrl: "",
   repoUrl: "https://github.com/Ari-S-123/eli5",
   techStack: [typeScript, react, nextJS, tailwind, shadCn, convex, workOs, anthropic, ai, daytona]
@@ -222,6 +228,15 @@ const terraFix: Project = {
   techStack: [python, aws, vanta, anthropic]
 };
 
+const anywhere: Project = {
+  name: "Anywhere",
+  description:
+    "A voice-guided AI Tour Guide that lets you go anywhere on Earth with a Google Maps Street View picture and generate a selfie too with Nano Banana Pro. Won me third place on the Nano Banana Pro Track as well as being a top 6 finalist out of 62 projects at the Gemini 3 Hackathon by Google DeepMind and Cerebral Valley in December 2025.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/Ari-S-123/anywhere",
+  techStack: [typeScript, react, nextJS, tailwind, shadCn, gemini, googleMaps, gsap, zustand, wavefile, webAudioAPI]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -233,6 +248,6 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
-export const hackathonProjects: Project[] = [investorFit, eli5, antiVenom, mailSplit];
+export const hackathonProjects: Project[] = [anywhere, investorFit, eli5, antiVenom, mailSplit];
 export const distributedSystemsProjects: Project[] = [terraFix, distributedKVStore];
 export const mlProjects: Project[] = [piiMasking];

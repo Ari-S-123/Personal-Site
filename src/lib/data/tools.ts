@@ -284,3 +284,39 @@ export const peft: Tool = {
   name: "PEFT",
   color: "bg-yellow-500"
 };
+
+export const gemini: Tool = {
+  name: "Gemini",
+  color: "bg-sky-500"
+};
+
+export const googleMaps: Tool = {
+  name: "Google Maps JS API",
+  color: "bg-green-600"
+};
+
+export const gsap: Tool = {
+  name: "GSAP",
+  color: "bg-lime-500"
+};
+
+export const zustand: Tool = {
+  name: "Zustand",
+  color: "bg-amber-500"
+};
+
+/**
+ * wavefile handles PCM encoding and decoding for the audio pipeline.
+ */
+export const wavefile: Tool = {
+  name: "wavefile",
+  color: "bg-violet-500"
+};
+
+/**
+ * Web Audio API powers microphone capture, processing, and playback in-browser.
+ */
+export const webAudioAPI: Tool = {
+  name: "Web Audio API",
+  color: "bg-yellow-400"
+};
