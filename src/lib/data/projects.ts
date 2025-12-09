@@ -46,7 +46,8 @@ import {
   gsap,
   zustand,
   wavefile,
-  webAudioAPI
+  webAudioAPI,
+  modal
 } from "./tools";
 
 const poemPortal: Project = {
@@ -204,10 +205,10 @@ const investorFit: Project = {
 const piiMasking: Project = {
   name: "Open Source PII Masking",
   description:
-    "Improving PII masking performance in adversarial conditions and diverse contexts by fine-tuning DeBERTaV3 (transformer) with PyTorch, PEFT (DoRA), and higher quality synthetic data.",
+    "Improved PII masking performance in adversarial conditions and diverse contexts by fine-tuning DeBERTaV3 (transformer) with PyTorch and PEFT (DoRA) with a synthetically-augmented dataset of over 130,000 rows of data on an H100 GPU on Modal.",
   hostedUrl: "",
-  repoUrl: "",
-  techStack: [python, pytorch, peft]
+  repoUrl: "https://github.com/Ari-S-123/pii-masking",
+  techStack: [python, pytorch, peft, modal]
 };
 
 const distributedKVStore: Project = {
@@ -231,7 +232,7 @@ const terraFix: Project = {
 const anywhere: Project = {
   name: "Anywhere",
   description:
-    "A voice-guided AI Tour Guide that lets you go anywhere on Earth with a Google Maps Street View picture and generate a selfie too with Nano Banana Pro. Won me third place on the Nano Banana Pro Track as well as being a top 6 finalist out of 62 projects at the Gemini 3 Hackathon by Google DeepMind and Cerebral Valley in December 2025.",
+    "A voice-guided AI Tour Guide that lets you go anywhere on Earth with a Google Maps Street View panoramic picture and generate a selfie too with Nano Banana Pro. Won me third place on the Nano Banana Pro Track as well as being a top 6 finalist out of 62 projects at the Gemini 3 Hackathon by Google DeepMind and Cerebral Valley in December 2025.",
   hostedUrl: "",
   repoUrl: "https://github.com/Ari-S-123/anywhere",
   techStack: [typeScript, react, nextJS, tailwind, shadCn, gemini, googleMaps, gsap, zustand, wavefile, webAudioAPI]

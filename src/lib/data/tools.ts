@@ -320,3 +320,8 @@ export const webAudioAPI: Tool = {
   name: "Web Audio API",
   color: "bg-yellow-400"
 };
+
+export const modal: Tool = {
+  name: "Modal",
+  color: "bg-green-500"
+};

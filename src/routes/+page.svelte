@@ -86,6 +86,71 @@
   );
 
   /**
+   * Navigation metadata for section links, allowing horizontal tab-like navigation
+   * that stays in sync with the currently visible filtered sections.
+   */
+  type SectionNavItem = {
+    /** Unique DOM identifier that doubles as the scroll target. */
+    id: string;
+    /** Human-readable label shown in the navigation. */
+    label: string;
+    /** In-page anchor reference pointing to the section container. */
+    href: string;
+    /** Whether the section currently has visible items and should be rendered. */
+    isVisible: boolean;
+  };
+
+  /**
+   * Derived list of sections used to render horizontal navigation links.
+   * Updates reactively as filters change so tabs are shown only for sections that have results.
+   */
+  const sectionNavItems = $derived<SectionNavItem[]>([
+    {
+      id: "experience",
+      label: "Experience",
+      href: "#experience",
+      isVisible: filteredExperiences.length > 0
+    },
+    {
+      id: "ml-projects",
+      label: "ML Projects",
+      href: "#ml-projects",
+      isVisible: filteredMlProjects.length > 0
+    },
+    {
+      id: "distributed-systems-projects",
+      label: "Distributed Systems",
+      href: "#distributed-systems-projects",
+      isVisible: filteredDistributedSystemsProjects.length > 0
+    },
+    {
+      id: "web-dev-projects",
+      label: "Web Dev Projects",
+      href: "#web-dev-projects",
+      isVisible: filteredWebDevProjects.length > 0
+    },
+    {
+      id: "data-viz-projects",
+      label: "Data Viz Projects",
+      href: "#data-viz-projects",
+      isVisible: filteredDataVizProjects.length > 0
+    },
+    {
+      id: "hackathon-projects",
+      label: "Hackathon Projects",
+      href: "#hackathon-projects",
+      isVisible: filteredHackathonProjects.length > 0
+    }
+  ]);
+
+  /**
+   * Boolean guard indicating whether any section is available for navigation.
+   * Prevents rendering of empty navigation containers when filters yield no results.
+   * @type {boolean}
+   */
+  const hasVisibleSectionNavItems = $derived(sectionNavItems.some((item) => item.isVisible));
+
+  /**
    * Handles search input events by updating the filter text.
    * The filtered arrays will automatically update via their $derived declarations.
    *
@@ -108,7 +173,7 @@
           class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
           aria-label="Easter Egg Link"
         >
-          <Avatar.Root aria-label="Picture of Website Author" class="glowing-border size-64 rounded-full border-1">
+          <Avatar.Root aria-label="Picture of Website Author" class="glowing-border size-64 rounded-full border">
             <Avatar.Image src="Profile-Pic.png" alt="Picture of Ari" class="object-cover" />
             <Avatar.Fallback>Picture of Ari</Avatar.Fallback>
           </Avatar.Root>
@@ -145,8 +210,28 @@
     bind:value={filterText}
     oninput={handleSearch}
   />
+  {#if hasVisibleSectionNavItems}
+    <nav
+      class="grid w-full max-w-2xl grid-cols-2 items-center justify-center justify-items-center gap-2 px-3 py-2"
+      aria-label="Section navigation"
+    >
+      {#each sectionNavItems as item (item.id)}
+        {#if item.isVisible}
+          <Button
+            variant="secondary"
+            size="sm"
+            href={item.href}
+            class="glowing-border w-full max-w-56 px-3 text-center leading-tight"
+            aria-label={`Jump to ${item.label}`}
+          >
+            {item.label}
+          </Button>
+        {/if}
+      {/each}
+    </nav>
+  {/if}
   {#if filteredExperiences.length > 0}
-    <Card.Root class="glowing-border" aria-label="Card containing list of experiences">
+    <Card.Root id="experience" class="glowing-border" aria-label="Card containing list of experiences">
       <Card.Header>
         <h3 class="text-2xl font-bold">Experience</h3>
       </Card.Header>
@@ -161,7 +246,7 @@
     </Card.Root>
   {/if}
   {#if filteredMlProjects.length > 0}
-    <Card.Root class="glowing-border" aria-label="Card containing list of ml projects">
+    <Card.Root id="ml-projects" class="glowing-border" aria-label="Card containing list of ml projects">
       <Card.Header>
         <h3 class="text-2xl font-bold">ML Projects</h3>
       </Card.Header>
@@ -176,7 +261,11 @@
     </Card.Root>
   {/if}
   {#if filteredDistributedSystemsProjects.length > 0}
-    <Card.Root class="glowing-border" aria-label="Card containing list of distributed systems projects">
+    <Card.Root
+      id="distributed-systems-projects"
+      class="glowing-border"
+      aria-label="Card containing list of distributed systems projects"
+    >
       <Card.Header>
         <h3 class="text-2xl font-bold">Distributed Systems Projects</h3>
       </Card.Header>
@@ -191,7 +280,7 @@
     </Card.Root>
   {/if}
   {#if filteredWebDevProjects.length > 0}
-    <Card.Root class="glowing-border" aria-label="Card containing list of web dev projects">
+    <Card.Root id="web-dev-projects" class="glowing-border" aria-label="Card containing list of web dev projects">
       <Card.Header>
         <h3 class="text-2xl font-bold">Web Dev Projects</h3>
       </Card.Header>
@@ -206,7 +295,7 @@
     </Card.Root>
   {/if}
   {#if filteredDataVizProjects.length > 0}
-    <Card.Root class="glowing-border" aria-label="Card containing list of dataviz projects">
+    <Card.Root id="data-viz-projects" class="glowing-border" aria-label="Card containing list of dataviz projects">
       <Card.Header>
         <h3 class="text-2xl font-bold">Data Viz Projects</h3>
       </Card.Header>
@@ -221,7 +310,7 @@
     </Card.Root>
   {/if}
   {#if filteredHackathonProjects.length > 0}
-    <Card.Root class="glowing-border" aria-label="Card containing list of hackathon projects">
+    <Card.Root id="hackathon-projects" class="glowing-border" aria-label="Card containing list of hackathon projects">
       <Card.Header>
         <h3 class="text-2xl font-bold">Hackathon Projects</h3>
       </Card.Header>
