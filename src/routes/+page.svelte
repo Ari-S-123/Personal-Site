@@ -221,7 +221,7 @@
             variant="secondary"
             size="sm"
             href={item.href}
-            class="glowing-border w-full max-w-56 px-3 text-center leading-tight"
+            class="glowing-border w-full max-w-48 border px-3 text-center leading-tight"
             aria-label={`Jump to ${item.label}`}
           >
             {item.label}

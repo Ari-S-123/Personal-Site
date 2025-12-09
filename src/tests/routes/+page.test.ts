@@ -9,6 +9,7 @@ describe("Profile Card", () => {
   it("should render the profile avatar with correct attributes", () => {
     render(Page);
     const avatarContainer = screen.getByLabelText("Picture of Website Author");
+    // Ensures avatar container preserves sizing, rounding, and decorative border styling.
     expect(avatarContainer).toHaveClass(
       "relative",
       "flex",
@@ -16,7 +17,7 @@ describe("Profile Card", () => {
       "overflow-hidden",
       "size-64",
       "rounded-full",
-      "border-1",
+      "border",
       "glowing-border"
     );
     const avatar = screen.getByAltText("Picture of Ari");
