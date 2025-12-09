@@ -205,7 +205,7 @@ const investorFit: Project = {
 const piiMasking: Project = {
   name: "Open Source PII Masking",
   description:
-    "Improved PII masking performance in adversarial conditions and diverse contexts by fine-tuning DeBERTaV3 (transformer) with PyTorch and PEFT (DoRA) with a synthetically-augmented dataset of over 130,000 rows of data on an H100 GPU on Modal.",
+    "Improved PII masking performance in adversarial conditions and diverse contexts by fine-tuning DeBERTaV3 (transformer) with PyTorch and PEFT (DoRA) with a synthetically-augmented dataset of over 150,000 rows of data on an H100 GPU on Modal.",
   hostedUrl: "",
   repoUrl: "https://github.com/Ari-S-123/pii-masking",
   techStack: [python, pytorch, peft, modal]
