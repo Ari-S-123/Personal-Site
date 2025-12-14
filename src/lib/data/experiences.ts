@@ -107,7 +107,7 @@ const ta2: Experience = {
   ],
   startDate: "September 2025",
   endDate: "Present",
-  techStack: [typeScript]
+  techStack: [typeScript, javaScript, react, nextJS]
 };
 
 export const experiences: Experience[] = [ta2, pawToGrader, ta1, lexiaLearning, ner];

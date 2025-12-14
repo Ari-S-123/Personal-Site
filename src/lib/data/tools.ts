@@ -325,3 +325,28 @@ export const modal: Tool = {
   name: "Modal",
   color: "bg-green-500"
 };
+
+export const viem: Tool = {
+  name: "Viem",
+  color: "bg-white"
+};
+
+export const wagmi: Tool = {
+  name: "Wagmi",
+  color: "bg-blue-500"
+};
+
+export const rainbowKit: Tool = {
+  name: "RainbowKit",
+  color: "bg-blue-500"
+};
+
+export const reactQuery: Tool = {
+  name: "React Query",
+  color: "bg-red-500"
+};
+
+export const monad: Tool = {
+  name: "Monad",
+  color: "bg-purple-500"
+};

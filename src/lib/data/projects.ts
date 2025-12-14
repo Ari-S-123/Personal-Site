@@ -47,7 +47,11 @@ import {
   zustand,
   wavefile,
   webAudioAPI,
-  modal
+  modal,
+  viem,
+  wagmi,
+  rainbowKit,
+  monad
 } from "./tools";
 
 const poemPortal: Project = {
@@ -232,10 +236,19 @@ const terraFix: Project = {
 const anywhere: Project = {
   name: "Anywhere",
   description:
-    "A voice-guided AI Tour Guide that lets you go anywhere on Earth with a Google Maps Street View panoramic picture and generate a selfie too with Nano Banana Pro. Won me third place on the Nano Banana Pro Track as well as being a top 6 finalist out of 62 projects at the Gemini 3 Hackathon by Google DeepMind and Cerebral Valley in December 2025.",
+    "A voice-guided AI Tour Guide that lets you go anywhere on Earth with a Google Maps Street View panoramic picture and generate a selfie too with Nano Banana Pro. Won me 3rd place on the Nano Banana Pro Track as well as being a top 6 finalist out of 62 projects at the Gemini 3 Hackathon by Google DeepMind and Cerebral Valley in December 2025.",
   hostedUrl: "",
   repoUrl: "https://github.com/Ari-S-123/anywhere",
   techStack: [typeScript, react, nextJS, tailwind, shadCn, gemini, googleMaps, gsap, zustand, wavefile, webAudioAPI]
+};
+
+const supafans: Project = {
+  name: "SupaFans",
+  description:
+    "SupaFans is an Agent-to-Agent (A2A) marketplace that democratizes the fan experience through programmatic loyalty by connecting artists directly with their most dedicated fans through on-chain reputation with ERC-8004 and agentic commerce on the Monad blockchain. Won/tied for 3rd place at the SNR >> 1 Hackathon by Bunny Labs in Napa Valley, California in December 2025.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/drewM33/supafan",
+  techStack: [typeScript, vite, react, viem, wagmi, rainbowKit, monad]
 };
 
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
@@ -249,6 +262,6 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
-export const hackathonProjects: Project[] = [anywhere, investorFit, eli5, antiVenom, mailSplit];
+export const hackathonProjects: Project[] = [supafans, anywhere, investorFit, eli5, antiVenom, mailSplit];
 export const distributedSystemsProjects: Project[] = [terraFix, distributedKVStore];
 export const mlProjects: Project[] = [piiMasking];
