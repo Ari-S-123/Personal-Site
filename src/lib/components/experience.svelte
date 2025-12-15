@@ -7,7 +7,7 @@
 
 <div aria-label={"Experience Details for " + title} class="flex flex-col">
   <b>{title} @ {organization}</b>
-  <i>{startDate} - {endDate}</i>
+  <span>{startDate} - {endDate}</span>
   <ul aria-label="Experience Description" class="flex list-outside list-disc flex-col items-start justify-start pl-5">
     {#each description as desc, i (i)}
       <li class="m-2 w-full text-left">{desc}</li>
