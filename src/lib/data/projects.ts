@@ -51,7 +51,11 @@ import {
   viem,
   wagmi,
   rainbowKit,
-  monad
+  monad,
+  dedalusLabs,
+  mapbox,
+  openStreetMap,
+  turfJs
 } from "./tools";
 
 const poemPortal: Project = {
@@ -251,6 +255,15 @@ const supafans: Project = {
   techStack: [typeScript, vite, react, viem, wagmi, rainbowKit, monad]
 };
 
+const icbg: Project = {
+  name: "ICBG",
+  description:
+    "Intercontinental Ballistic Gifts is Santa's logistics operations platform for global gift delivery, combining an interactive 3D globe interface with AI-powered gift recommendations via Grok-4. Features polygon-based area selection on a Mapbox globe, real-time address identification from OpenStreetMap Overpass API, intelligent gift pairing using household metadata, and automated purchasing via MCP server integrations. Won 1st place on the Sleigh Track at the Santa's Ho's HackNight by Dedalus Labs in December 2025.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/shlawgathon/ICBG",
+  techStack: [typeScript, nextJS, react, convex, mapbox, openStreetMap, turfJs, tailwind, shadCn, dedalusLabs]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -262,6 +275,6 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
-export const hackathonProjects: Project[] = [supafans, anywhere, investorFit, eli5, antiVenom, mailSplit];
+export const hackathonProjects: Project[] = [icbg, supafans, anywhere, investorFit, eli5, antiVenom, mailSplit];
 export const distributedSystemsProjects: Project[] = [terraFix, distributedKVStore];
 export const mlProjects: Project[] = [piiMasking];

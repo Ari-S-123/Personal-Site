@@ -350,3 +350,23 @@ export const monad: Tool = {
   name: "Monad",
   color: "bg-purple-500"
 };
+
+export const dedalusLabs: Tool = {
+  name: "Dedalus Labs",
+  color: "bg-yellow-500"
+};
+
+export const mapbox: Tool = {
+  name: "Mapbox",
+  color: "bg-blue-500"
+};
+
+export const openStreetMap: Tool = {
+  name: "OpenStreetMap",
+  color: "bg-green-500"
+};
+
+export const turfJs: Tool = {
+  name: "Turf.js",
+  color: "bg-green-500"
+};
