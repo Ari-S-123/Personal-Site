@@ -106,7 +106,7 @@ const ta2: Experience = {
     "Guiding graduate students with a focus on modern software development life cycle models (Agile), requirements analysis, testing strategies, software architecture, and design patterns."
   ],
   startDate: "September 2025",
-  endDate: "Present",
+  endDate: "December 2025",
   techStack: [typeScript, javaScript, react, nextJS]
 };
 
