@@ -82,7 +82,7 @@ describe("Experience Component", () => {
     render(Experience, { props: experienceWithSingleDesc });
 
     const descriptionList = screen.getByLabelText("Experience Description");
-    const items = descriptionList.querySelectorAll("li");
+    const items = descriptionList.querySelectorAll("p");
     expect(items).toHaveLength(1);
     expect(items[0]).toHaveTextContent("Single responsibility");
   });

@@ -24,7 +24,10 @@ import {
   argosCI,
   awsChime,
   prisma,
-  express
+  express,
+  go,
+  terraform,
+  aws
 } from "./tools";
 
 const ner: Experience = {
@@ -103,11 +106,22 @@ const ta2: Experience = {
   title: "Teaching Assistant - Software Engineering",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Guiding graduate students with a focus on modern software development life cycle models (Agile), requirements analysis, testing strategies, software architecture, and design patterns."
+    "Guided graduate students with a focus on modern software development life cycle models (Agile), requirements analysis, testing strategies, software architecture, and design patterns."
   ],
   startDate: "September 2025",
   endDate: "December 2025",
   techStack: [typeScript, javaScript, react, nextJS]
 };
 
-export const experiences: Experience[] = [ta2, pawToGrader, ta1, lexiaLearning, ner];
+const ta3: Experience = {
+  title: "Teaching Assistant - Distributed Systems",
+  organization: "Khoury College of Computer Sciences",
+  description: [
+    "Guiding graduate students through the design and implementation of scalable distributed systems, covering topics such as concurrency versus parallelism, consistency-availability tradeoffs (CAP theorem), performance modeling (Amdahl's Law), and resilient architecture patterns."
+  ],
+  startDate: "January 2026",
+  endDate: "Present",
+  techStack: [go, terraform, aws]
+};
+
+export const experiences: Experience[] = [ta3, ta2, pawToGrader, ta1, lexiaLearning, ner];
