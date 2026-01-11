@@ -59,7 +59,7 @@
   {#if techStack.length > 0}
     <div aria-label={`Tech stack for ${name}`} class="my-2 flex flex-row flex-wrap gap-2">
       {#each techStack as tech, i (tech.name || i)}
-        <Badge class={tech.color}>{tech.name}</Badge>
+        <Badge class={`${tech.color} ${tech.textColor}`}>{tech.name}</Badge>
       {/each}
     </div>
   {/if}

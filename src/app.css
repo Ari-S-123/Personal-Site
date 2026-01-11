@@ -125,6 +125,25 @@
   main {
     @apply mx-8 my-4 flex flex-col items-center justify-center text-center;
   }
+
+  button:enabled,
+  input[type="button"]:enabled,
+  input[type="submit"]:enabled,
+  input[type="reset"]:enabled {
+    @apply cursor-pointer;
+  }
+
+  button:disabled,
+  input[type="button"]:disabled,
+  input[type="submit"]:disabled,
+  input[type="reset"]:disabled,
+  [aria-disabled="true"] {
+    @apply cursor-not-allowed;
+  }
+
+  [role="button"]:not([aria-disabled="true"]) {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {
@@ -184,9 +203,4 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
-}
-
-a,
-button {
-  @apply cursor-pointer;
 }

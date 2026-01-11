@@ -52,10 +52,15 @@ import {
   wagmi,
   rainbowKit,
   monad,
-  dedalusLabs,
+  dedalus,
   mapbox,
   openStreetMap,
-  turfJs
+  turfJs,
+  mongoDB,
+  VoyageAI,
+  galileoAI,
+  fireworksAI,
+  coinbase
 } from "./tools";
 
 const poemPortal: Project = {
@@ -261,7 +266,30 @@ const icbg: Project = {
     "Intercontinental Ballistic Gifts is Santa's logistics operations platform for global gift delivery, combining an interactive 3D globe interface with AI-powered gift recommendations via Grok-4. Features polygon-based area selection on a Mapbox globe, real-time address identification from OpenStreetMap Overpass API, intelligent gift pairing using household metadata, and automated purchasing via MCP server integrations. Won 1st place on the Sleigh Track at the Santa's Ho's HackNight by Dedalus Labs in December 2025.",
   hostedUrl: "",
   repoUrl: "https://github.com/shlawgathon/ICBG",
-  techStack: [typeScript, nextJS, react, convex, mapbox, openStreetMap, turfJs, tailwind, shadCn, dedalusLabs]
+  techStack: [typeScript, nextJS, react, convex, mapbox, openStreetMap, turfJs, tailwind, shadCn, dedalus]
+};
+
+const paigent: Project = {
+  name: "Paigent Studio",
+  description:
+    "Paigent Studio is a workflow IDE that enables you to design and execute multi-agent workflows with automatic micropayments. Describe what you want to accomplish using voice or text, and our AI planner creates an optimal execution graph that pays for premium tools on-demand using USDC.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/maxxie114/paigent",
+  techStack: [
+    typeScript,
+    nextJS,
+    react,
+    convex,
+    tailwind,
+    shadCn,
+    vercel,
+    clerk,
+    mongoDB,
+    VoyageAI,
+    galileoAI,
+    fireworksAI,
+    coinbase
+  ]
 };
 
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
@@ -275,6 +303,15 @@ export const dataVizProjects: Project[] = [
   tEdAndLifeExpDataviz,
   videoGameSalesDataviz
 ];
-export const hackathonProjects: Project[] = [icbg, supafans, anywhere, investorFit, eli5, antiVenom, mailSplit];
+export const hackathonProjects: Project[] = [
+  paigent,
+  icbg,
+  supafans,
+  anywhere,
+  investorFit,
+  eli5,
+  antiVenom,
+  mailSplit
+];
 export const distributedSystemsProjects: Project[] = [terraFix, distributedKVStore];
 export const mlProjects: Project[] = [piiMasking];

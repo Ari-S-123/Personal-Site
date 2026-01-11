@@ -212,7 +212,7 @@
   />
   {#if hasVisibleSectionNavItems}
     <nav
-      class="grid w-full max-w-2xl grid-cols-2 items-center justify-center justify-items-center gap-2 px-3 py-2"
+      class="grid w-full max-w-3xl grid-cols-2 items-center justify-center justify-items-center gap-2 px-3 py-2 md:grid-cols-3"
       aria-label="Section navigation"
     >
       {#each sectionNavItems as item (item.id)}
@@ -221,7 +221,7 @@
             variant="secondary"
             size="sm"
             href={item.href}
-            class="glowing-border w-full max-w-48 border px-3 text-center leading-tight"
+            class="glowing-border w-full max-w-48 border px-3 text-center leading-tight md:max-w-52"
             aria-label={`Jump to ${item.label}`}
           >
             {item.label}
