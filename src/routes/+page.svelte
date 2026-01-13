@@ -196,8 +196,8 @@
           href={profileLink.url}
           aria-label={profileLink.ariaLabel}
           size="icon"
-          class="size-12"
-          ><img src={profileLink.iconPath} alt={profileLink.iconAlt} class="expand" />
+          class="expand size-12"
+          ><img src={profileLink.iconPath} alt={profileLink.iconAlt} />
         </Button>
       {/each}
     </Card.Footer>
@@ -221,7 +221,7 @@
             variant="secondary"
             size="sm"
             href={item.href}
-            class="glowing-border w-full max-w-48 border px-3 text-center leading-tight md:max-w-52"
+            class="glowing-border expand w-full max-w-48 border px-3 text-center leading-tight md:max-w-52"
             aria-label={`Jump to ${item.label}`}
           >
             {item.label}

@@ -27,7 +27,9 @@ import {
   express,
   go,
   terraform,
-  aws
+  aws,
+  pytorch,
+  python
 } from "./tools";
 
 const ner: Experience = {
@@ -124,4 +126,15 @@ const ta3: Experience = {
   techStack: [go, terraform, aws]
 };
 
-export const experiences: Experience[] = [ta3, ta2, pawToGrader, ta1, lexiaLearning, ner];
+const research: Experience = {
+  title: "Student Researcher",
+  organization: "Khoury College of Computer Sciences",
+  description: [
+    "Developing neural networks in the domain of material science to better predict the properties of materials inside electronic devices."
+  ],
+  startDate: "January 2026",
+  endDate: "Present",
+  techStack: [python, pytorch]
+};
+
+export const experiences: Experience[] = [research, ta3, ta2, pawToGrader, ta1, lexiaLearning, ner];
