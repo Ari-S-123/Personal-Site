@@ -23,20 +23,24 @@ bun test:watch   # Watch mode for tests
 ## Architecture
 
 ### Data-Driven Design
+
 - All portfolio content lives in `src/lib/data/` - projects, experiences, tools, and links are typed objects
 - Adding new content: modify the appropriate data file, no component changes needed
 - Projects are organized by category: `webDev`, `dataViz`, `hackathon`, `distributedSystems`, `ml`
 
 ### Component Structure
+
 - `src/lib/components/ui/` - shadcn-svelte components (avatar, badge, button, card, hover-card, input, separator)
 - `src/lib/components/` - domain components (project.svelte, experience.svelte)
 - Uses Svelte 5 Runes syntax (`$state`, `$derived`) for reactivity
 
 ### Filtering System
+
 - `src/lib/filters.ts` contains generic `matchesFilter()` for searching across projects and experiences
 - Main page (`src/routes/+page.svelte`) uses derived state for real-time filtering
 
 ### Key Utilities
+
 - `src/lib/utils.ts` - `cn()` function for Tailwind class merging (clsx + tailwind-merge)
 
 ## Tech Stack Details

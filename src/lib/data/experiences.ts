@@ -130,7 +130,7 @@ const research: Experience = {
   title: "Student Researcher",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Developing neural networks in the domain of material science to better predict the properties of materials inside electronic devices."
+    "Developing polymer chemistry informed neural networks that better analyze how polymers grow over time."
   ],
   startDate: "January 2026",
   endDate: "Present",
