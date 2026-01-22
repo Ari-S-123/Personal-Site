@@ -47,7 +47,7 @@ const ner: Experience = {
 };
 
 const lexiaLearning: Experience = {
-  title: "Software Engineering Intern",
+  title: "Software Engineer Intern",
   organization: "Lexia Learning",
   description: [
     "Engineered and refactored front-end components to improve the user experience for millions of students and tens of thousands of teachers on Lexia Learning's Core5 Web and iPad English literacy learning program.",
