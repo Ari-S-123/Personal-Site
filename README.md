@@ -14,14 +14,14 @@
 
 ## Scripts
 
-- Run `bun run lint` to lint the code.
+- Run `bun run lint` to check for both linting and formatting errors.
 
-- Run `bun run format` to format the code.
+- Run `bun run format` to fix formatting errors.
 
 - Run `bun run check` to run the svelte-check.
 
 - Run `bun run test` to run the tests.
 
-- Run `bun run build` to run the tests in the browser.
+- Run `bun run build` to build a production version of the app.
 
-- Run `bun run preview --open` to run the preview server and open the app in a new browser tab.
+- Run `bun run preview --open` to run a preview of the production build and open the app in a new browser tab.
