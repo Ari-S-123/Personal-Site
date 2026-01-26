@@ -416,3 +416,13 @@ export const coinbase: Tool = {
   color: "bg-[#0052FF]",
   textColor: "text-white"
 };
+
+export const stripe: Tool = {
+  name: "Stripe",
+  color: "bg-[#635bff]"
+};
+
+export const sim: Tool = {
+  name: "Sim",
+  color: "bg-[#6f3dfa]"
+};

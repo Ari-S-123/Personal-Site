@@ -60,7 +60,9 @@ import {
   VoyageAI,
   galileoAI,
   fireworksAI,
-  coinbase
+  coinbase,
+  stripe,
+  sim
 } from "./tools";
 
 const poemPortal: Project = {
@@ -292,6 +294,15 @@ const paigent: Project = {
   ]
 };
 
+const physical: Project = {
+  name: "PhysicalAI",
+  description:
+    "The Agentic Physical Ad Space Marketplace: an analytic platform for real-world advertisements powered by real-time California PeMS traffic data and AI. Features AI-powered discovery via natural language search through SimAI, interactive 3D map exploration through Google Maps, smart demand scoring (green/yellow/red based on live traffic), and a seller marketplace where anyone can list their ad space. Buyers can preview how their billboard would look on any given ad space using generate preview powered by Nano Banana Pro, then easily book it with Stripe payments. Top 6 Finalist project at the YC Full Stack Hackathon in January 2026.",
+  hostedUrl: "",
+  repoUrl: "https://github.com/shlawgathon/Physical",
+  techStack: [typeScript, react, nextJS, tailwind, stripe, supabase, sim, gemini, googleMaps, fireworksAI, vercel]
+};
+
 export const webDevProjects: Project[] = [mixSmart, infiniteApps, storyWeaver, poemPortal];
 export const dataVizProjects: Project[] = [
   aiDataStoryGenerator,
@@ -304,6 +315,7 @@ export const dataVizProjects: Project[] = [
   videoGameSalesDataviz
 ];
 export const hackathonProjects: Project[] = [
+  physical,
   paigent,
   icbg,
   supafans,
