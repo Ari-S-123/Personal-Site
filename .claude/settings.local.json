@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where:*)",
+      "Bash(npm install:*)",
+      "Bash(typescript-language-server:*)",
+      "Bash(pyright-langserver:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:www.rrweb.io)",
+      "Bash(bun build)",
+      "Bash(bun run build:*)"
+    ]
+  }
+}
