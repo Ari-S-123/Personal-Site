@@ -26,13 +26,14 @@ bun test:watch   # Watch mode for tests
 
 - All portfolio content lives in `src/lib/data/` - projects, experiences, tools, and links are typed objects
 - Adding new content: modify the appropriate data file, no component changes needed
-- Projects are organized by category: `webDev`, `dataViz`, `hackathon`, `distributedSystems`, `ml`
+- Projects are displayed in a single unified list
 
 ### Component Structure
 
 - `src/lib/components/ui/` - shadcn-svelte components (avatar, badge, button, card, hover-card, input, separator)
 - `src/lib/components/` - domain components (project.svelte, experience.svelte)
 - Uses Svelte 5 Runes syntax (`$state`, `$derived`) for reactivity
+- Uses `<strong>` for semantic emphasis (not `<b>`) in domain components
 
 ### Filtering System
 

@@ -182,12 +182,6 @@ export const playwright: Tool = {
   color: "bg-[#D65348]"
 };
 
-export const sentry: Tool = {
-  name: "Sentry",
-  color: "bg-[#362D59]",
-  textColor: "text-white"
-};
-
 export const bugsink: Tool = {
   name: "Bugsink",
   color: "bg-blue-500"
@@ -419,10 +413,29 @@ export const coinbase: Tool = {
 
 export const stripe: Tool = {
   name: "Stripe",
-  color: "bg-[#635bff]"
+  color: "bg-[#635bff]",
+  textColor: "text-white"
 };
 
 export const sim: Tool = {
   name: "Sim",
-  color: "bg-[#6f3dfa]"
+  color: "bg-[#6f3dfa]",
+  textColor: "text-white"
+};
+
+export const betterAuth: Tool = {
+  name: "BetterAuth",
+  color: "bg-black",
+  textColor: "text-white"
+};
+
+export const browserBase: Tool = {
+  name: "BrowserBase",
+  color: "bg-[#f03603]"
+};
+
+export const sentry: Tool = {
+  name: "Sentry",
+  color: "bg-[#452650]",
+  textColor: "text-white"
 };

@@ -56,7 +56,7 @@ describe("Project Component", () => {
     render(Project, { props: mockProject });
     const techStackContainer = screen.getByLabelText("Tech stack for Test Project");
     expect(techStackContainer).toBeInTheDocument();
-    expect(techStackContainer).toHaveClass("flex", "flex-row", "flex-wrap", "gap-2", "my-2");
+    expect(techStackContainer).toHaveClass("flex", "flex-row", "flex-wrap", "gap-2", "mt-1");
     const reactBadge = screen.getByText("React");
     expect(reactBadge).toHaveClass("bg-blue-500");
     const typeScriptBadge = screen.getByText("TypeScript");
@@ -70,11 +70,9 @@ describe("Project Component", () => {
   });
   it("should render project details section with correct structure", () => {
     render(Project, { props: mockProject });
-    const detailsContainer = screen.getByLabelText("Project Details");
-    expect(detailsContainer).toHaveClass("flex", "flex-row", "items-center", "justify-between");
     const description = screen.getByText("A test project description");
-    expect(description).toHaveClass("m-2");
+    expect(description).toHaveClass("mt-1", "mb-2");
     const linksContainer = screen.getByLabelText("External Links");
-    expect(linksContainer).toHaveClass("flex", "flex-row", "items-center", "justify-between", "gap-2");
+    expect(linksContainer).toHaveClass("flex", "shrink-0", "items-center", "gap-2");
   });
 });

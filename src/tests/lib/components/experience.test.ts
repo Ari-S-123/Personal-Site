@@ -41,14 +41,15 @@ describe("Experience Component", () => {
       "flex-col",
       "items-start",
       "justify-start",
-      "pl-5"
+      "pl-5",
+      "text-left"
     );
 
     mockExperience.description.forEach((desc) => {
       const listItem = screen.getByText(desc);
       expect(listItem).toBeInTheDocument();
       expect(listItem.tagName).toBe("LI");
-      expect(listItem).toHaveClass("m-2");
+      expect(listItem).toHaveClass("mt-1", "mb-1");
     });
   });
 
@@ -57,7 +58,7 @@ describe("Experience Component", () => {
 
     const techStackContainer = screen.getByLabelText("Tech stack for Software Engineer at Tech Corp");
     expect(techStackContainer).toBeInTheDocument();
-    expect(techStackContainer).toHaveClass("flex", "flex-row", "flex-wrap", "gap-2", "m-2");
+    expect(techStackContainer).toHaveClass("flex", "flex-row", "flex-wrap", "gap-2", "mt-2");
 
     mockExperience.techStack.forEach((tech) => {
       const badge = screen.getByText(tech.name);
@@ -82,7 +83,7 @@ describe("Experience Component", () => {
     render(Experience, { props: experienceWithSingleDesc });
 
     const descriptionList = screen.getByLabelText("Experience Description");
-    const items = descriptionList.querySelectorAll("p");
+    const items = descriptionList.querySelectorAll("li");
     expect(items).toHaveLength(1);
     expect(items[0]).toHaveTextContent("Single responsibility");
   });
