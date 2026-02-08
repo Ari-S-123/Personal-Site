@@ -9,7 +9,28 @@
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:www.rrweb.io)",
       "Bash(bun build)",
-      "Bash(bun run build:*)"
+      "Bash(bun run build:*)",
+      "WebFetch(domain:www.perplexity.ai)",
+      "Bash(powershell -Command \"[System.Environment]::GetEnvironmentVariable\\(''CLAUDE_CODE_OAUTH_TOKEN'', ''User''\\)\")",
+      "Bash(powershell -Command \"[System.Environment]::GetEnvironmentVariable\\(''CLAUDE_CODE_OAUTH_TOKEN'', ''Machine''\\)\")",
+      "Bash(powershell -Command \"[System.Environment]::SetEnvironmentVariable\\(''CLAUDE_CODE_OAUTH_TOKEN'', $null, [System.EnvironmentVariableTarget]::User\\)\")",
+      "Bash(powershell -Command \"[System.Environment]::SetEnvironmentVariable\\(''CLAUDE_CODE_OAUTH_TOKEN'', [System.String]::Empty, [System.EnvironmentVariableTarget]::User\\)\")",
+      "Bash(cd:*)",
+      "Bash(bun outdated:*)",
+      "WebFetch(domain:eslint.org)",
+      "WebSearch",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:typescript-eslint.io)",
+      "WebFetch(domain:github.com)",
+      "Bash(bun install:*)",
+      "Bash(bun run lint:*)",
+      "Bash(bun run format:*)",
+      "Bash(bun run check:*)",
+      "Bash(bun run test:*)",
+      "Bash(bun run:*)",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_screenshot"
     ]
-  }
+  },
+  "outputStyle": "default"
 }
