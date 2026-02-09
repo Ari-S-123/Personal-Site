@@ -1,8 +1,6 @@
 import type { Project } from "$lib/types";
 import {
-  svelteKit,
   tailwind,
-  shadCnSvelte,
   vite,
   supabase,
   typeScript,
@@ -94,14 +92,6 @@ const infiniteApps: Project = {
   hostedUrl: "https://infinite-apps.vercel.app",
   repoUrl: "https://github.com/Ari-S-123/infinite-apps",
   techStack: [v0, nextJS, react, tailwind, shadCn, typeScript]
-};
-
-const mixSmart: Project = {
-  name: "MixSmart",
-  description: "Coming Soon 👀",
-  hostedUrl: "",
-  repoUrl: "",
-  techStack: [svelteKit, tailwind, shadCnSvelte, convex, betterAuth, ai, vercel]
 };
 
 const mailSplit: Project = {
@@ -222,7 +212,6 @@ export const projects: Project[] = [
   piiMasking,
   eli5,
   mailSplit,
-  mixSmart,
   infiniteApps,
   storyWeaver,
   aiDataStoryGenerator,
