@@ -1,16 +1,22 @@
 <script lang="ts">
+  import { onDestroy } from "svelte";
   import * as Avatar from "$lib/components/ui/avatar";
   import { Button } from "$lib/components/ui/button";
   import { profileLinks } from "$lib/data";
   import * as Card from "$lib/components/ui/card/index";
   import { Separator } from "$lib/components/ui/separator/index";
+  import semanticIndex from "$lib/data/semantic-index.json";
   import { projects } from "$lib/data";
   import { experiences } from "$lib/data";
   import Project from "$lib/components/project.svelte";
   import Experience from "$lib/components/experience.svelte";
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
-  import { matchesFilter, getExperienceSearchFields, getProjectSearchFields } from "$lib/filters";
+  import { getExperienceSearchFields, getProjectSearchFields } from "$lib/filters";
+  import { normalizeSearchText, SEMANTIC_MIN_QUERY_LENGTH } from "$lib/search/embedding";
+  import { createSearchId, rankItems } from "$lib/search/rank";
+  import { createSemanticClient } from "$lib/search/semantic-client";
+  import type { SemanticIndexEntry } from "$lib/types";
 
   /**
    * User-entered search filter text.
@@ -19,11 +25,78 @@
   let filterText = $state("");
 
   /**
+   * Latest query embedding used for semantic ranking.
+   */
+  let semanticQueryEmbedding = $state<number[] | null>(null);
+
+  /**
+   * Visual loading state for semantic query embedding generation.
+   */
+  let semanticSearchPending = $state(false);
+
+  /**
+   * Non-blocking semantic search error state.
+   */
+  let semanticSearchError = $state<string | null>(null);
+
+  const semanticSearchEnabled = import.meta.env["VITE_ENABLE_SEMANTIC_SEARCH"] !== "false";
+
+  const semanticClient = createSemanticClient();
+  onDestroy(() => {
+    semanticClient.destroy();
+  });
+
+  const semanticIndexById = new Map<string, SemanticIndexEntry>(
+    (semanticIndex as SemanticIndexEntry[]).map((entry) => [entry.id, entry])
+  );
+
+  /**
    * Cache lowercase version of filter text for performance optimization.
    * Automatically recomputes when filterText changes.
    * @type {string}
    */
-  const normalizedFilterText = $derived(filterText.toLowerCase());
+  const normalizedFilterText = $derived(normalizeSearchText(filterText));
+
+  $effect(() => {
+    const query = normalizedFilterText;
+    semanticSearchError = null;
+
+    if (!semanticSearchEnabled || query.length < SEMANTIC_MIN_QUERY_LENGTH) {
+      semanticQueryEmbedding = null;
+      semanticSearchPending = false;
+      return;
+    }
+
+    let isCancelled = false;
+    const timeoutId = setTimeout(() => {
+      semanticSearchPending = true;
+
+      void semanticClient
+        .embedQuery(query)
+        .then((embedding) => {
+          if (!isCancelled) {
+            semanticQueryEmbedding = embedding;
+          }
+        })
+        .catch((error) => {
+          if (!isCancelled) {
+            semanticQueryEmbedding = null;
+            semanticSearchError = error instanceof Error ? error.message : "Semantic search is currently unavailable.";
+          }
+        })
+        .finally(() => {
+          if (!isCancelled) {
+            semanticSearchPending = false;
+          }
+        });
+    }, 250);
+
+    return () => {
+      isCancelled = true;
+      clearTimeout(timeoutId);
+      semanticSearchPending = false;
+    };
+  });
 
   /**
    * Reactive filtered array of experiences.
@@ -31,7 +104,14 @@
    * @type {typeof experiences}
    */
   const filteredExperiences = $derived(
-    experiences.filter((exp) => matchesFilter(exp, getExperienceSearchFields(exp), normalizedFilterText))
+    rankItems(
+      experiences,
+      normalizedFilterText,
+      getExperienceSearchFields,
+      (experience) => createSearchId("experience", experience.title),
+      semanticIndexById,
+      semanticQueryEmbedding
+    ).map((result) => result.item)
   );
 
   /**
@@ -40,7 +120,14 @@
    * @type {typeof projects}
    */
   const filteredProjects = $derived(
-    projects.filter((proj) => matchesFilter(proj, getProjectSearchFields(proj), normalizedFilterText))
+    rankItems(
+      projects,
+      normalizedFilterText,
+      getProjectSearchFields,
+      (project) => createSearchId("project", project.name),
+      semanticIndexById,
+      semanticQueryEmbedding
+    ).map((result) => result.item)
   );
 
   /**
@@ -144,6 +231,15 @@
     bind:value={filterText}
     oninput={handleSearch}
   />
+  {#if semanticSearchEnabled && normalizedFilterText.length >= SEMANTIC_MIN_QUERY_LENGTH}
+    <p class="min-h-4 text-xs text-muted-foreground" aria-live="polite">
+      {#if semanticSearchPending}
+        Enhancing results...
+      {:else if semanticSearchError}
+        Showing lexical results only.
+      {/if}
+    </p>
+  {/if}
   {#if hasVisibleSectionNavItems}
     <nav class="flex flex-wrap items-center justify-center gap-2 px-3 py-2" aria-label="Section navigation">
       {#each sectionNavItems as item (item.id)}

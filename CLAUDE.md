@@ -18,6 +18,7 @@ bun format       # Format code with Prettier
 bun test         # Run tests (single run)
 bun test:ui      # Run tests with Vitest UI
 bun test:watch   # Watch mode for tests
+bun gen:semantic-index  # Regenerate semantic embeddings after content changes
 ```
 
 ## Architecture
@@ -35,10 +36,19 @@ bun test:watch   # Watch mode for tests
 - Uses Svelte 5 Runes syntax (`$state`, `$derived`) for reactivity
 - Uses `<strong>` for semantic emphasis (not `<b>`) in domain components
 
-### Filtering System
+### Search & Filtering System
 
-- `src/lib/filters.ts` contains generic `matchesFilter()` for searching across projects and experiences
-- Main page (`src/routes/+page.svelte`) uses derived state for real-time filtering
+- `src/lib/filters.ts` - `matchesFilter()` for boolean filtering, `getLexicalScore()` for scored lexical relevance, plus field extractors (`getExperienceSearchFields`, `getProjectSearchFields`)
+- `src/lib/search/` - Hybrid search module (lexical 70% + semantic 30%):
+  - `embedding.ts` - text normalization, tokenization, stemming, synonym expansion, deterministic hash-based embeddings (192-dim)
+  - `rank.ts` - `rankItems()` combines lexical and semantic scores; `createSearchId()` for index lookups
+  - `semantic-client.ts` - client-side embedding generation with Web Worker, caching, and cancellation
+  - `embedding.worker.ts` - Web Worker for non-blocking embedding computation
+- `src/lib/data/semantic-index.json` - precomputed embeddings for all projects/experiences (regenerate with `bun gen:semantic-index`)
+- `scripts/generate-semantic-index.ts` - build-time script to regenerate the semantic index
+- `src/lib/types/semantic.ts` - `SemanticIndexEntry` type for the search index
+- Main page uses 250ms debounced semantic search with graceful fallback to lexical-only
+- Feature flag: `VITE_ENABLE_SEMANTIC_SEARCH` env var (defaults to enabled)
 
 ### Key Utilities
 

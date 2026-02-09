@@ -40,7 +40,8 @@
       "mcp__chrome-devtools__evaluate_script",
       "mcp__chrome-devtools__emulate",
       "Bash(bun test:*)",
-      "Bash(bun check:*)"
+      "Bash(bun check:*)",
+      "Bash(bun lint:*)"
     ]
   },
   "outputStyle": "default"
