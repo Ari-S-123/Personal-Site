@@ -17,29 +17,47 @@ type WorkerResponseMessage =
       error: string;
     };
 
-self.onmessage = (event: MessageEvent<WorkerQueryMessage>) => {
-  // Validate origin when available to avoid processing messages from unexpected sources.
-  // In many worker environments, `origin` may be "null" or an empty string; adjust as needed.
-  if (typeof (event as MessageEvent).origin === "string") {
-    const origin = (event as MessageEvent).origin;
-    // Allow only expected origins; here we conservatively accept same-origin/opaque ("null").
-    if (origin && origin !== "null") {
-      return;
-    }
+function isWorkerQueryMessage(data: unknown): data is WorkerQueryMessage {
+  if (typeof data !== "object" || data === null) {
+    return false;
   }
 
-  // Validate the structure of the incoming data before using it.
-  const data = event.data as unknown;
-  if (
-    typeof data !== "object" ||
-    data === null ||
-    typeof (data as any).requestId !== "number" ||
-    typeof (data as any).query !== "string"
-  ) {
+  const candidate = data as Partial<WorkerQueryMessage>;
+  return (
+    typeof candidate.requestId === "number" &&
+    Number.isFinite(candidate.requestId) &&
+    Number.isInteger(candidate.requestId) &&
+    candidate.requestId >= 0 &&
+    typeof candidate.query === "string"
+  );
+}
+
+function isTrustedMessageOrigin(origin: unknown): boolean {
+  if (typeof origin !== "string" || origin === "" || origin === "null") {
+    return true;
+  }
+
+  const workerOrigin = self.location?.origin;
+  if (typeof workerOrigin !== "string" || workerOrigin === "" || workerOrigin === "null") {
+    return false;
+  }
+
+  return origin === workerOrigin;
+}
+
+type MessageEventLike = Pick<MessageEvent<unknown>, "data" | "origin">;
+
+export function handleWorkerMessage(
+  event: MessageEventLike,
+  postMessage: (message: WorkerResponseMessage) => void = (message) => self.postMessage(message)
+): void {
+  const data = event.data;
+  // For worker messaging, enforce same-origin (or opaque) sender plus strict payload validation.
+  if (!isTrustedMessageOrigin(event.origin) || !isWorkerQueryMessage(data)) {
     return;
   }
 
-  const { requestId, query } = data as WorkerQueryMessage;
+  const { requestId, query } = data;
 
   try {
     const normalizedQuery = normalizeSearchText(query);
@@ -48,14 +66,18 @@ self.onmessage = (event: MessageEvent<WorkerQueryMessage>) => {
       requestId,
       embedding
     };
-    self.postMessage(response);
+    postMessage(response);
   } catch (error) {
     const response: WorkerResponseMessage = {
       requestId,
       error: error instanceof Error ? error.message : "Unable to generate semantic embedding."
     };
-    self.postMessage(response);
+    postMessage(response);
   }
-};
+}
 
 export type { WorkerQueryMessage, WorkerResponseMessage };
+
+self.onmessage = (event: MessageEvent<WorkerQueryMessage>) => {
+  handleWorkerMessage(event);
+};
