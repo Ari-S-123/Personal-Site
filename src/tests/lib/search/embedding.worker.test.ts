@@ -40,7 +40,28 @@ describe("handleWorkerMessage", () => {
     expect(response.embedding.every((value) => typeof value === "number" && Number.isFinite(value))).toBe(true);
   });
 
-  it("ignores payloads from untrusted origins", () => {
+  it("processes valid payloads when worker origin is opaque", () => {
+    const postMessage = vi.fn<(message: WorkerResponseMessage) => void>();
+
+    handleWorkerMessage(
+      {
+        data: {
+          requestId: 8,
+          query: "Opaque worker origin"
+        },
+        origin: "https://app.example"
+      } as MessageEvent<unknown>,
+      postMessage,
+      "null"
+    );
+
+    expect(postMessage).toHaveBeenCalledTimes(1);
+    const response = getPostedMessage(postMessage);
+    expect(response).toMatchObject({ requestId: 8 });
+    expect("error" in response).toBe(false);
+  });
+
+  it("ignores payloads from untrusted origins when worker origin is concrete", () => {
     const postMessage = vi.fn<(message: WorkerResponseMessage) => void>();
 
     handleWorkerMessage(
@@ -51,7 +72,8 @@ describe("handleWorkerMessage", () => {
         },
         origin: "https://attacker.example"
       } as MessageEvent<unknown>,
-      postMessage
+      postMessage,
+      "https://portfolio.example"
     );
 
     expect(postMessage).not.toHaveBeenCalled();

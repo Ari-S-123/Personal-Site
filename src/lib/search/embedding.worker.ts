@@ -32,14 +32,13 @@ function isWorkerQueryMessage(data: unknown): data is WorkerQueryMessage {
   );
 }
 
-function isTrustedMessageOrigin(origin: unknown): boolean {
+function isTrustedMessageOrigin(origin: unknown, workerOrigin: unknown = self.location?.origin): boolean {
   if (typeof origin !== "string" || origin === "" || origin === "null") {
     return true;
   }
 
-  const workerOrigin = self.location?.origin;
   if (typeof workerOrigin !== "string" || workerOrigin === "" || workerOrigin === "null") {
-    return false;
+    return true;
   }
 
   return origin === workerOrigin;
@@ -49,11 +48,12 @@ type MessageEventLike = Pick<MessageEvent<unknown>, "data" | "origin">;
 
 export function handleWorkerMessage(
   event: MessageEventLike,
-  postMessage: (message: WorkerResponseMessage) => void = (message) => self.postMessage(message)
+  postMessage: (message: WorkerResponseMessage) => void = (message) => self.postMessage(message),
+  workerOrigin: unknown = self.location?.origin
 ): void {
   const data = event.data;
   // For worker messaging, enforce same-origin (or opaque) sender plus strict payload validation.
-  if (!isTrustedMessageOrigin(event.origin) || !isWorkerQueryMessage(data)) {
+  if (!isTrustedMessageOrigin(event.origin, workerOrigin) || !isWorkerQueryMessage(data)) {
     return;
   }
 
