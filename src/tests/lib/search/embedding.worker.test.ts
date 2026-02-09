@@ -14,7 +14,7 @@ function getPostedMessage(mock: ReturnType<typeof vi.fn>): WorkerResponseMessage
 describe("handleWorkerMessage", () => {
   it("processes valid payloads from trusted origins", () => {
     const postMessage = vi.fn<(message: WorkerResponseMessage) => void>();
-    const trustedOrigin = globalThis.location?.origin ?? "null";
+    const trustedOrigin = "";
 
     handleWorkerMessage(
       {
