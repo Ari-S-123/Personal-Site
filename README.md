@@ -27,9 +27,3 @@
 - Run `bun run preview --open` to run a preview of the production build and open the app in a new browser tab.
 
 - Run `bun run gen:semantic-index` whenever you update project or experience content to refresh `src/lib/data/semantic-index.json`.
-
-## Semantic Search Notes
-
-- Semantic search is implemented as a static-friendly hybrid ranker (lexical + semantic).
-- Query embeddings are generated client-side in a Web Worker.
-- Item embeddings are generated at build/update time and stored in `src/lib/data/semantic-index.json`.
