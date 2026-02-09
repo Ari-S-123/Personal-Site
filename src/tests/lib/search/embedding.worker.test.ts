@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+import { SEMANTIC_EMBEDDING_DIMENSION } from "$lib/search/embedding";
 import { handleWorkerMessage } from "$lib/search/embedding.worker";
 import type { WorkerResponseMessage } from "$lib/search/embedding.worker";
 
@@ -29,7 +30,14 @@ describe("handleWorkerMessage", () => {
     expect(postMessage).toHaveBeenCalledTimes(1);
     const response = getPostedMessage(postMessage);
     expect(response).toMatchObject({ requestId: 7 });
-    expect("embedding" in response).toBe(true);
+    expect("error" in response).toBe(false);
+    if (!("embedding" in response)) {
+      throw new Error("Expected embedding response");
+    }
+
+    expect(Array.isArray(response.embedding)).toBe(true);
+    expect(response.embedding).toHaveLength(SEMANTIC_EMBEDDING_DIMENSION);
+    expect(response.embedding.every((value) => typeof value === "number" && Number.isFinite(value))).toBe(true);
   });
 
   it("ignores payloads from untrusted origins", () => {
