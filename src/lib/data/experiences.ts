@@ -29,11 +29,13 @@ import {
   terraform,
   aws,
   pytorch,
-  python
+  python,
+  fastAPI,
+  docker
 } from "./tools";
 
 const ner: Experience = {
-  title: "Software Group Lead/Developer",
+  title: "Software Developer",
   organization: "Northeastern Electric Racing",
   description: [
     "Developed FinishLine, a project management web app to heighten the efficiency of Northeastern University’s title-winning electric racing team in the SAE Formula Hybrid+Electric Series.",
@@ -70,7 +72,7 @@ const ta1: Experience = {
   ],
   startDate: "January 2025",
   endDate: "April 2025",
-  techStack: [sql, apacheDerby, mySQL, postgres]
+  techStack: [sql, apacheDerby, mySQL, postgres, docker]
 };
 
 const pawToGrader: Experience = {
@@ -94,6 +96,7 @@ const pawToGrader: Experience = {
     recharts,
     postgres,
     supabase,
+    docker,
     playwright,
     argosCI,
     sentry,
@@ -137,7 +140,7 @@ const research: Experience = {
   ],
   startDate: "January 2026",
   endDate: "Present",
-  techStack: [python, pytorch]
+  techStack: [python, pytorch, fastAPI, react, nextJS, docker]
 };
 
 export const experiences: Experience[] = [research, ta3, ta2, pawToGrader, ta1, lexiaLearning, ner];

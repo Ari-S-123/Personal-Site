@@ -439,3 +439,14 @@ export const sentry: Tool = {
   color: "bg-[#452650]",
   textColor: "text-white"
 };
+
+export const fastAPI: Tool = {
+  name: "FastAPI",
+  color: "bg-[#009485]"
+};
+
+export const docker: Tool = {
+  name: "Docker",
+  color: "bg-[#1D63ED]",
+  textColor: "text-white"
+};
