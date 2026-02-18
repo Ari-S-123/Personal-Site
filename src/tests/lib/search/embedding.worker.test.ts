@@ -14,7 +14,7 @@ function getPostedMessage(mock: ReturnType<typeof vi.fn>): WorkerResponseMessage
 describe("handleWorkerMessage", () => {
   it("processes valid payloads from trusted origins", () => {
     const postMessage = vi.fn<(message: WorkerResponseMessage) => void>();
-    const trustedOrigin = "";
+    const trustedOrigin = "https://portfolio.example";
 
     handleWorkerMessage(
       {
@@ -24,7 +24,8 @@ describe("handleWorkerMessage", () => {
         },
         origin: trustedOrigin
       } as MessageEvent<unknown>,
-      postMessage
+      postMessage,
+      trustedOrigin
     );
 
     expect(postMessage).toHaveBeenCalledTimes(1);
@@ -40,7 +41,7 @@ describe("handleWorkerMessage", () => {
     expect(response.embedding.every((value) => typeof value === "number" && Number.isFinite(value))).toBe(true);
   });
 
-  it("processes valid payloads when worker origin is opaque", () => {
+  it("processes valid payloads from opaque sender origin when worker origin is opaque", () => {
     const postMessage = vi.fn<(message: WorkerResponseMessage) => void>();
 
     handleWorkerMessage(
@@ -49,7 +50,7 @@ describe("handleWorkerMessage", () => {
           requestId: 8,
           query: "Opaque worker origin"
         },
-        origin: "https://app.example"
+        origin: ""
       } as MessageEvent<unknown>,
       postMessage,
       "null"
@@ -59,6 +60,24 @@ describe("handleWorkerMessage", () => {
     const response = getPostedMessage(postMessage);
     expect(response).toMatchObject({ requestId: 8 });
     expect("error" in response).toBe(false);
+  });
+
+  it("ignores concrete sender origins when worker origin is opaque", () => {
+    const postMessage = vi.fn<(message: WorkerResponseMessage) => void>();
+
+    handleWorkerMessage(
+      {
+        data: {
+          requestId: 9,
+          query: "Opaque worker origin"
+        },
+        origin: "https://app.example"
+      } as MessageEvent<unknown>,
+      postMessage,
+      "null"
+    );
+
+    expect(postMessage).not.toHaveBeenCalled();
   });
 
   it("ignores payloads from untrusted origins when worker origin is concrete", () => {
@@ -96,7 +115,7 @@ describe("handleWorkerMessage", () => {
     ];
 
     for (const payload of invalidPayloads) {
-      handleWorkerMessage({ data: payload } as MessageEvent<unknown>, postMessage);
+      handleWorkerMessage({ data: payload, origin: "" } as MessageEvent<unknown>, postMessage, "null");
     }
 
     expect(postMessage).not.toHaveBeenCalled();

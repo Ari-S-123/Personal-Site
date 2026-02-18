@@ -33,15 +33,18 @@ function isWorkerQueryMessage(data: unknown): data is WorkerQueryMessage {
 }
 
 function isTrustedMessageOrigin(origin: unknown, workerOrigin: unknown = self.location?.origin): boolean {
-  if (typeof origin !== "string" || origin === "" || origin === "null") {
-    return true;
+  if (typeof origin !== "string") {
+    return false;
   }
 
-  if (typeof workerOrigin !== "string" || workerOrigin === "" || workerOrigin === "null") {
-    return true;
+  const originIsOpaque = origin === "" || origin === "null";
+  const workerOriginIsConcrete = typeof workerOrigin === "string" && workerOrigin !== "" && workerOrigin !== "null";
+
+  if (workerOriginIsConcrete) {
+    return origin === workerOrigin;
   }
 
-  return origin === workerOrigin;
+  return originIsOpaque;
 }
 
 type MessageEventLike = Pick<MessageEvent<unknown>, "data" | "origin">;
