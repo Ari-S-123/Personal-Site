@@ -134,8 +134,8 @@ const research: Experience = {
   organization: "Khoury College of Computer Sciences",
   description: [
     "Researching autonomous polymer synthesis workflows by collaborating with researchers from the Center for Nanophase Materials Sciences at the Oak Ridge National Laboratory.",
-    "Researching ways of improving periodicity-aware graph transformers that predict what properties a given polymer will have.",
-    "Researching ways of improving polymer chemistry informed neural networks that analyze how polymers grow over time.",
+    "Researching improvements to periodicity-aware graph transformers that predict what properties a given polymer will have.",
+    "Researching improvements to polymer chemistry informed neural networks that analyze how polymers grow over time using.",
     "Engineering agentic workflows for automated research and polymer synthesis pipelines that orchestrate data ingestion, model execution, parameter extraction, and computational analysis with minimal manual intervention."
   ],
   startDate: "January 2026",
