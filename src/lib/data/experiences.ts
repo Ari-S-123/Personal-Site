@@ -122,10 +122,10 @@ const ta3: Experience = {
   title: "Teaching Assistant - Distributed Systems",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Guiding graduate students through the design and implementation of scalable distributed systems, covering topics such as concurrency versus parallelism, consistency-availability tradeoffs (CAP theorem), performance modeling (Amdahl's Law), and resilient architecture patterns."
+    "Guided graduate students through the design and implementation of scalable distributed systems, covering topics such as concurrency versus parallelism, consistency-availability tradeoffs (CAP theorem), performance modeling (Amdahl's Law), and resilient architecture patterns."
   ],
   startDate: "January 2026",
-  endDate: "Present",
+  endDate: "April 2026",
   techStack: [go, terraform, aws]
 };
 
@@ -133,13 +133,13 @@ const research: Experience = {
   title: "Student Researcher",
   organization: "Khoury College of Computer Sciences",
   description: [
-    "Researching autonomous polymer synthesis workflows by collaborating with researchers from the Center for Nanophase Materials Sciences at the Oak Ridge National Laboratory.",
-    "Researching improvements to periodicity-aware graph transformers that predict what properties a given polymer structure will have.",
-    "Researching improvements to polymer chemistry informed neural networks that predict how polymers grow over time.",
-    "Engineering agentic workflows for automated research and polymer synthesis pipelines that orchestrate data ingestion, model execution, parameter extraction, and computational analysis with minimal manual intervention."
+    "Researched autonomous polymer synthesis workflows by collaborating with researchers from the Center for Nanophase Materials Sciences at the Oak Ridge National Laboratory.",
+    "Researched improvements to periodicity-aware graph transformers that predict what properties a given polymer structure will have.",
+    "Researched improvements to polymer chemistry informed neural networks that predict how polymers grow over time.",
+    "Engineered agentic workflows for automated research and polymer synthesis pipelines that orchestrate data ingestion, model execution, parameter extraction, and computational analysis with minimal manual intervention."
   ],
   startDate: "January 2026",
-  endDate: "Present",
+  endDate: "April 2026",
   techStack: [python, pytorch, fastAPI, react, nextJS, docker]
 };
 
